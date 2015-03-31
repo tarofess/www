@@ -13,6 +13,18 @@
 		508051361AAD14A0004F1E58 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 508051351AAD14A0004F1E58 /* Images.xcassets */; };
 		508051391AAD14A0004F1E58 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 508051371AAD14A0004F1E58 /* LaunchScreen.xib */; };
 		508051451AAD14A0004F1E58 /* World_Wide_WordTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 508051441AAD14A0004F1E58 /* World_Wide_WordTests.swift */; };
+		50B3346B1AC2E6B70090EC2E /* Ball Point Pen.png in Resources */ = {isa = PBXBuildFile; fileRef = 50B334671AC2E6B70090EC2E /* Ball Point Pen.png */; };
+		50B3346C1AC2E6B70090EC2E /* Book Stack.png in Resources */ = {isa = PBXBuildFile; fileRef = 50B334681AC2E6B70090EC2E /* Book Stack.png */; };
+		50B3346D1AC2E6B70090EC2E /* Idea.png in Resources */ = {isa = PBXBuildFile; fileRef = 50B334691AC2E6B70090EC2E /* Idea.png */; };
+		50B3346E1AC2E6B70090EC2E /* Shopping Cart.png in Resources */ = {isa = PBXBuildFile; fileRef = 50B3346A1AC2E6B70090EC2E /* Shopping Cart.png */; };
+		50B334B81AC7CEBF0090EC2E /* DataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B334B71AC7CEBF0090EC2E /* DataViewController.swift */; };
+		50B334BC1AC7D2A10090EC2E /* CreateWordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B334BB1AC7D2A10090EC2E /* CreateWordViewController.swift */; };
+		50B334BE1AC7D3130090EC2E /* ShopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B334BD1AC7D3130090EC2E /* ShopViewController.swift */; };
+		50B334C01AC807510090EC2E /* Word.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B334BF1AC807510090EC2E /* Word.swift */; };
+		50B334C21AC808F10090EC2E /* RLMSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B334C11AC808F10090EC2E /* RLMSupport.swift */; };
+		50B334C81AC81BA00090EC2E /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B334C71AC81BA00090EC2E /* ResultViewController.swift */; };
+		50B334CA1ACA0C3A0090EC2E /* FromLeftSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B334C91ACA0C3A0090EC2E /* FromLeftSegue.swift */; };
+		9FBC042672F7275875F00E4A /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 783B8433A0EFAC078A868E9C /* libPods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -26,6 +38,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4EBD5ABE722C4B4C1023EF1A /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		508051291AAD14A0004F1E58 /* World Wide Word.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "World Wide Word.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5080512D1AAD14A0004F1E58 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5080512E1AAD14A0004F1E58 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -36,6 +49,20 @@
 		5080513E1AAD14A0004F1E58 /* World Wide WordTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "World Wide WordTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		508051431AAD14A0004F1E58 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		508051441AAD14A0004F1E58 /* World_Wide_WordTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = World_Wide_WordTests.swift; sourceTree = "<group>"; };
+		50B334671AC2E6B70090EC2E /* Ball Point Pen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Ball Point Pen.png"; sourceTree = "<group>"; };
+		50B334681AC2E6B70090EC2E /* Book Stack.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Book Stack.png"; sourceTree = "<group>"; };
+		50B334691AC2E6B70090EC2E /* Idea.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Idea.png; sourceTree = "<group>"; };
+		50B3346A1AC2E6B70090EC2E /* Shopping Cart.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Shopping Cart.png"; sourceTree = "<group>"; };
+		50B334B71AC7CEBF0090EC2E /* DataViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataViewController.swift; sourceTree = "<group>"; };
+		50B334BB1AC7D2A10090EC2E /* CreateWordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateWordViewController.swift; sourceTree = "<group>"; };
+		50B334BD1AC7D3130090EC2E /* ShopViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShopViewController.swift; sourceTree = "<group>"; };
+		50B334BF1AC807510090EC2E /* Word.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Word.swift; sourceTree = "<group>"; };
+		50B334C11AC808F10090EC2E /* RLMSupport.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RLMSupport.swift; sourceTree = "<group>"; };
+		50B334C31AC809F50090EC2E /* World Wide Word-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "World Wide Word-Bridging-Header.h"; sourceTree = "<group>"; };
+		50B334C71AC81BA00090EC2E /* ResultViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
+		50B334C91ACA0C3A0090EC2E /* FromLeftSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FromLeftSegue.swift; sourceTree = "<group>"; };
+		783B8433A0EFAC078A868E9C /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		7926F74E88573BE7A4CA0B91 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +70,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9FBC042672F7275875F00E4A /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,12 +84,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		04117C6D822BF02ADB97DF45 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				4EBD5ABE722C4B4C1023EF1A /* Pods.debug.xcconfig */,
+				7926F74E88573BE7A4CA0B91 /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		508051201AAD14A0004F1E58 = {
 			isa = PBXGroup;
 			children = (
 				5080512B1AAD14A0004F1E58 /* World Wide Word */,
 				508051411AAD14A0004F1E58 /* World Wide WordTests */,
 				5080512A1AAD14A0004F1E58 /* Products */,
+				04117C6D822BF02ADB97DF45 /* Pods */,
+				D75EDA25B445802DECDB9E95 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -77,12 +116,21 @@
 		5080512B1AAD14A0004F1E58 /* World Wide Word */ = {
 			isa = PBXGroup;
 			children = (
+				50B334641AC2E5A80090EC2E /* Images */,
 				5080512E1AAD14A0004F1E58 /* AppDelegate.swift */,
 				508051301AAD14A0004F1E58 /* ViewController.swift */,
+				50B334BB1AC7D2A10090EC2E /* CreateWordViewController.swift */,
+				50B334B71AC7CEBF0090EC2E /* DataViewController.swift */,
+				50B334C71AC81BA00090EC2E /* ResultViewController.swift */,
+				50B334BD1AC7D3130090EC2E /* ShopViewController.swift */,
+				50B334BF1AC807510090EC2E /* Word.swift */,
+				50B334C91ACA0C3A0090EC2E /* FromLeftSegue.swift */,
 				508051321AAD14A0004F1E58 /* Main.storyboard */,
 				508051351AAD14A0004F1E58 /* Images.xcassets */,
 				508051371AAD14A0004F1E58 /* LaunchScreen.xib */,
 				5080512C1AAD14A0004F1E58 /* Supporting Files */,
+				50B334C31AC809F50090EC2E /* World Wide Word-Bridging-Header.h */,
+				50B334C11AC808F10090EC2E /* RLMSupport.swift */,
 			);
 			path = "World Wide Word";
 			sourceTree = "<group>";
@@ -112,6 +160,25 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		50B334641AC2E5A80090EC2E /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				50B334671AC2E6B70090EC2E /* Ball Point Pen.png */,
+				50B334681AC2E6B70090EC2E /* Book Stack.png */,
+				50B334691AC2E6B70090EC2E /* Idea.png */,
+				50B3346A1AC2E6B70090EC2E /* Shopping Cart.png */,
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
+		D75EDA25B445802DECDB9E95 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				783B8433A0EFAC078A868E9C /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -119,9 +186,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 508051481AAD14A0004F1E58 /* Build configuration list for PBXNativeTarget "World Wide Word" */;
 			buildPhases = (
+				B1DD50D0BF31B427F2D9E53D /* Check Pods Manifest.lock */,
 				508051251AAD14A0004F1E58 /* Sources */,
 				508051261AAD14A0004F1E58 /* Frameworks */,
 				508051271AAD14A0004F1E58 /* Resources */,
+				D1C7E81710302E17C0BC2B6A /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -192,9 +261,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				50B3346D1AC2E6B70090EC2E /* Idea.png in Resources */,
+				50B3346C1AC2E6B70090EC2E /* Book Stack.png in Resources */,
 				508051341AAD14A0004F1E58 /* Main.storyboard in Resources */,
+				50B3346B1AC2E6B70090EC2E /* Ball Point Pen.png in Resources */,
 				508051391AAD14A0004F1E58 /* LaunchScreen.xib in Resources */,
 				508051361AAD14A0004F1E58 /* Images.xcassets in Resources */,
+				50B3346E1AC2E6B70090EC2E /* Shopping Cart.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -207,13 +280,53 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		B1DD50D0BF31B427F2D9E53D /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		D1C7E81710302E17C0BC2B6A /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		508051251AAD14A0004F1E58 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				50B334BC1AC7D2A10090EC2E /* CreateWordViewController.swift in Sources */,
 				508051311AAD14A0004F1E58 /* ViewController.swift in Sources */,
+				50B334C21AC808F10090EC2E /* RLMSupport.swift in Sources */,
+				50B334C81AC81BA00090EC2E /* ResultViewController.swift in Sources */,
+				50B334CA1ACA0C3A0090EC2E /* FromLeftSegue.swift in Sources */,
+				50B334BE1AC7D3130090EC2E /* ShopViewController.swift in Sources */,
+				50B334B81AC7CEBF0090EC2E /* DataViewController.swift in Sources */,
 				5080512F1AAD14A0004F1E58 /* AppDelegate.swift in Sources */,
+				50B334C01AC807510090EC2E /* Word.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -334,21 +447,28 @@
 		};
 		508051491AAD14A0004F1E58 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4EBD5ABE722C4B4C1023EF1A /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = "World Wide Word/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "World Wide Word/World Wide Word-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
 		5080514A1AAD14A0004F1E58 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7926F74E88573BE7A4CA0B91 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = "World Wide Word/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "World Wide Word/World Wide Word-Bridging-Header.h";
 			};
 			name = Release;
 		};
@@ -405,6 +525,7 @@
 				5080514A1AAD14A0004F1E58 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		5080514B1AAD14A0004F1E58 /* Build configuration list for PBXNativeTarget "World Wide WordTests" */ = {
 			isa = XCConfigurationList;
@@ -413,6 +534,7 @@
 				5080514D1AAD14A0004F1E58 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
