@@ -24,6 +24,11 @@
 		50B334C21AC808F10090EC2E /* RLMSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B334C11AC808F10090EC2E /* RLMSupport.swift */; };
 		50B334C81AC81BA00090EC2E /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B334C71AC81BA00090EC2E /* ResultViewController.swift */; };
 		50B334CA1ACA0C3A0090EC2E /* FromLeftSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B334C91ACA0C3A0090EC2E /* FromLeftSegue.swift */; };
+		50B334D61ACB63270090EC2E /* spring.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 50B334D51ACB63270090EC2E /* spring.jpg */; };
+		50B334E01ACB672C0090EC2E /* summer.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 50B334DF1ACB672C0090EC2E /* summer.jpeg */; };
+		50B334E41ACB67EE0090EC2E /* autumn.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 50B334E31ACB67EE0090EC2E /* autumn.jpg */; };
+		50B334E61ACC1A3D0090EC2E /* winter.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 50B334E51ACC1A3D0090EC2E /* winter.jpg */; };
+		50B334EC1ACC21BD0090EC2E /* rainbow.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 50B334EB1ACC21BD0090EC2E /* rainbow.jpg */; };
 		9FBC042672F7275875F00E4A /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 783B8433A0EFAC078A868E9C /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -61,6 +66,11 @@
 		50B334C31AC809F50090EC2E /* World Wide Word-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "World Wide Word-Bridging-Header.h"; sourceTree = "<group>"; };
 		50B334C71AC81BA00090EC2E /* ResultViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
 		50B334C91ACA0C3A0090EC2E /* FromLeftSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FromLeftSegue.swift; sourceTree = "<group>"; };
+		50B334D51ACB63270090EC2E /* spring.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = spring.jpg; sourceTree = "<group>"; };
+		50B334DF1ACB672C0090EC2E /* summer.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = summer.jpeg; sourceTree = "<group>"; };
+		50B334E31ACB67EE0090EC2E /* autumn.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = autumn.jpg; sourceTree = "<group>"; };
+		50B334E51ACC1A3D0090EC2E /* winter.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = winter.jpg; sourceTree = "<group>"; };
+		50B334EB1ACC21BD0090EC2E /* rainbow.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = rainbow.jpg; sourceTree = "<group>"; };
 		783B8433A0EFAC078A868E9C /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		7926F74E88573BE7A4CA0B91 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -163,10 +173,15 @@
 		50B334641AC2E5A80090EC2E /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				50B334D51ACB63270090EC2E /* spring.jpg */,
+				50B334DF1ACB672C0090EC2E /* summer.jpeg */,
+				50B334E31ACB67EE0090EC2E /* autumn.jpg */,
 				50B334671AC2E6B70090EC2E /* Ball Point Pen.png */,
 				50B334681AC2E6B70090EC2E /* Book Stack.png */,
 				50B334691AC2E6B70090EC2E /* Idea.png */,
 				50B3346A1AC2E6B70090EC2E /* Shopping Cart.png */,
+				50B334E51ACC1A3D0090EC2E /* winter.jpg */,
+				50B334EB1ACC21BD0090EC2E /* rainbow.jpg */,
 			);
 			name = Images;
 			sourceTree = "<group>";
@@ -262,12 +277,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				50B3346D1AC2E6B70090EC2E /* Idea.png in Resources */,
+				50B334E61ACC1A3D0090EC2E /* winter.jpg in Resources */,
 				50B3346C1AC2E6B70090EC2E /* Book Stack.png in Resources */,
 				508051341AAD14A0004F1E58 /* Main.storyboard in Resources */,
+				50B334EC1ACC21BD0090EC2E /* rainbow.jpg in Resources */,
 				50B3346B1AC2E6B70090EC2E /* Ball Point Pen.png in Resources */,
 				508051391AAD14A0004F1E58 /* LaunchScreen.xib in Resources */,
 				508051361AAD14A0004F1E58 /* Images.xcassets in Resources */,
 				50B3346E1AC2E6B70090EC2E /* Shopping Cart.png in Resources */,
+				50B334E01ACB672C0090EC2E /* summer.jpeg in Resources */,
+				50B334D61ACB63270090EC2E /* spring.jpg in Resources */,
+				50B334E41ACB67EE0090EC2E /* autumn.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

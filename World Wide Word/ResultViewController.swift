@@ -38,6 +38,10 @@ class ResultViewController: ViewController {
         presentViewController(alertController, animated: true, completion: nil)
     }
     
+    @IBAction func back(sender: AnyObject) {
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
     func registerCreatedWordToDatabase() {
         
     }

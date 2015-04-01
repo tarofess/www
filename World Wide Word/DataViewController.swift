@@ -30,7 +30,7 @@ class DataViewController: ViewController {
     //セルの内容を変更
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell: UITableViewCell = UITableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: "Cell")
-        
+        cell.backgroundColor = UIColor.clearColor()
         cell.textLabel?.text = wordData[indexPath.row]
         return cell
     }
