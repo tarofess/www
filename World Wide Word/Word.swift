@@ -9,13 +9,11 @@
 import Foundation
 
 class Word: RLMObject {
-    var id = ""
+    var id = 0
     var speech = ""
     var word = ""
     
     override class func primaryKey() -> String {
         return "id"
     }
-    
-    
 }

@@ -15,12 +15,11 @@ class ViewController: UIViewController {
     
     var dataForSpeechPicker = ["名詞", "動詞", "形容詞"]
     var registerWordStore = ""
-    var registerSpeech = ""
+    var registerSpeechStore = "名詞"
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-
     }
 
     override func didReceiveMemoryWarning() {
@@ -43,7 +42,7 @@ class ViewController: UIViewController {
     }
     
     func pickerView(pickerview1: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        registerSpeech = dataForSpeechPicker[row]
+        registerSpeechStore = dataForSpeechPicker[row]
     }
     
     // MARK:- textField
@@ -58,35 +57,24 @@ class ViewController: UIViewController {
     // MARK:- registerButton
     
     @IBAction func registerWord(sender: AnyObject) {
-        var alertController = UIAlertController(title: "登録します", message: "\(dataForSpeechPicker[0])：test", preferredStyle: .Alert)
-        
-        let defaultAction:UIAlertAction = UIAlertAction(title: "はい",
-            style: UIAlertActionStyle.Default,
-            handler:{
-                (action:UIAlertAction!) -> Void in
-//                self.registerWordToDatabase()
-        })
-        
-        let cancelAction:UIAlertAction = UIAlertAction(title: "いいえ",
-            style: UIAlertActionStyle.Cancel,
-            handler:{
-                (action:UIAlertAction!) -> Void in
-                
-        })
-        
-        alertController.addAction(cancelAction)
-        alertController.addAction(defaultAction)
-        
-        presentViewController(alertController, animated: true, completion: nil)
+        if self.textField.text == "" {
+            
+        } else {
+            
+            let dbhelper = DatabaseHelper()
+            dbhelper.inputWordToDatabase(self.registerWordStore, registerSpeech: self.registerSpeechStore)
+            
+            self.textField.text = ""
+            
+            showCompleteAlert()
+        }
     }
     
-    func registerWordToDatabase() {
-        let realm = RLMRealm.defaultRealm()
-        
-        let word = Word()
-        word.speech = registerSpeech
-        word.word = registerWordStore
-        
+    func showCompleteAlert() {
+        let alertController = UIAlertController(title: "登録しました", message: "", preferredStyle: .Alert)
+        let completeAction: UIAlertAction = UIAlertAction(title: "はい", style: .Default, handler: nil)
+        alertController.addAction(completeAction)
+        self.presentViewController(alertController, animated: true, completion: nil)
     }
 }
 

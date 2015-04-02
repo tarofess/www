@@ -16,7 +16,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="images.jpeg" translatesAutoresizingMaskIntoConstraints="NO" id="DB2-D9-lrw">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="summer.jpeg" translatesAutoresizingMaskIntoConstraints="NO" id="DB2-D9-lrw">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                             <visualEffectView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BiV-al-la0">
@@ -92,7 +92,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" alpha="0.49999999999999961" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="rainbow.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="ENo-bC-JaI">
+                            <imageView userInteractionEnabled="NO" alpha="0.29999999999999966" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="rainbow.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="ENo-bC-JaI">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                             <visualEffectView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cR1-m7-B04">
@@ -111,6 +111,12 @@
                                                 <blurEffect style="light"/>
                                             </vibrancyEffect>
                                         </visualEffectView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="New Word" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RPQ-h2-vTH">
+                                            <rect key="frame" x="132" y="319" width="110" height="29"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                 </view>
                                 <blurEffect style="light"/>
@@ -136,16 +142,13 @@
                                     <segue destination="Iuc-Vh-w1U" kind="show" id="v2a-bw-0cD"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RPQ-h2-vTH">
-                                <rect key="frame" x="157" y="323" width="60" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="newWordLabel" destination="RPQ-h2-vTH" id="8if-ZP-a6t"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6l0-xV-J3L" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -196,7 +199,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" alpha="0.69999999999999973" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="11033000990.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="EN3-LU-Gz8">
+                            <imageView userInteractionEnabled="NO" alpha="0.49999999999999961" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="autumn.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="EN3-LU-Gz8">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                             <visualEffectView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="o3L-ka-jo3">
@@ -318,14 +321,14 @@
         </scene>
     </scenes>
     <resources>
-        <image name="11033000990.jpg" width="640" height="479"/>
         <image name="Ball Point Pen.png" width="25" height="25"/>
         <image name="Book Stack.png" width="26" height="26"/>
         <image name="Idea.png" width="26" height="26"/>
         <image name="Shopping Cart.png" width="26" height="26"/>
-        <image name="images.jpeg" width="275" height="183"/>
+        <image name="autumn.jpg" width="640" height="479"/>
         <image name="rainbow.jpg" width="400" height="327"/>
         <image name="spring.jpg" width="640" height="425"/>
+        <image name="summer.jpeg" width="275" height="183"/>
         <image name="winter.jpg" width="1024" height="768"/>
     </resources>
     <inferredMetricsTieBreakers>

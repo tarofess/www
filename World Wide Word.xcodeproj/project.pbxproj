@@ -23,12 +23,12 @@
 		50B334C01AC807510090EC2E /* Word.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B334BF1AC807510090EC2E /* Word.swift */; };
 		50B334C21AC808F10090EC2E /* RLMSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B334C11AC808F10090EC2E /* RLMSupport.swift */; };
 		50B334C81AC81BA00090EC2E /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B334C71AC81BA00090EC2E /* ResultViewController.swift */; };
-		50B334CA1ACA0C3A0090EC2E /* FromLeftSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B334C91ACA0C3A0090EC2E /* FromLeftSegue.swift */; };
 		50B334D61ACB63270090EC2E /* spring.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 50B334D51ACB63270090EC2E /* spring.jpg */; };
 		50B334E01ACB672C0090EC2E /* summer.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 50B334DF1ACB672C0090EC2E /* summer.jpeg */; };
 		50B334E41ACB67EE0090EC2E /* autumn.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 50B334E31ACB67EE0090EC2E /* autumn.jpg */; };
 		50B334E61ACC1A3D0090EC2E /* winter.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 50B334E51ACC1A3D0090EC2E /* winter.jpg */; };
 		50B334EC1ACC21BD0090EC2E /* rainbow.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 50B334EB1ACC21BD0090EC2E /* rainbow.jpg */; };
+		50B334F01ACC24B50090EC2E /* DatabaseHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B334EF1ACC24B50090EC2E /* DatabaseHelper.swift */; };
 		9FBC042672F7275875F00E4A /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 783B8433A0EFAC078A868E9C /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -65,12 +65,12 @@
 		50B334C11AC808F10090EC2E /* RLMSupport.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RLMSupport.swift; sourceTree = "<group>"; };
 		50B334C31AC809F50090EC2E /* World Wide Word-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "World Wide Word-Bridging-Header.h"; sourceTree = "<group>"; };
 		50B334C71AC81BA00090EC2E /* ResultViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
-		50B334C91ACA0C3A0090EC2E /* FromLeftSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FromLeftSegue.swift; sourceTree = "<group>"; };
 		50B334D51ACB63270090EC2E /* spring.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = spring.jpg; sourceTree = "<group>"; };
 		50B334DF1ACB672C0090EC2E /* summer.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = summer.jpeg; sourceTree = "<group>"; };
 		50B334E31ACB67EE0090EC2E /* autumn.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = autumn.jpg; sourceTree = "<group>"; };
 		50B334E51ACC1A3D0090EC2E /* winter.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = winter.jpg; sourceTree = "<group>"; };
 		50B334EB1ACC21BD0090EC2E /* rainbow.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = rainbow.jpg; sourceTree = "<group>"; };
+		50B334EF1ACC24B50090EC2E /* DatabaseHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatabaseHelper.swift; sourceTree = "<group>"; };
 		783B8433A0EFAC078A868E9C /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		7926F74E88573BE7A4CA0B91 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -128,13 +128,8 @@
 			children = (
 				50B334641AC2E5A80090EC2E /* Images */,
 				5080512E1AAD14A0004F1E58 /* AppDelegate.swift */,
-				508051301AAD14A0004F1E58 /* ViewController.swift */,
-				50B334BB1AC7D2A10090EC2E /* CreateWordViewController.swift */,
-				50B334B71AC7CEBF0090EC2E /* DataViewController.swift */,
-				50B334C71AC81BA00090EC2E /* ResultViewController.swift */,
-				50B334BD1AC7D3130090EC2E /* ShopViewController.swift */,
-				50B334BF1AC807510090EC2E /* Word.swift */,
-				50B334C91ACA0C3A0090EC2E /* FromLeftSegue.swift */,
+				50B334ED1ACC243E0090EC2E /* ViewController */,
+				50B334EE1ACC247B0090EC2E /* Database */,
 				508051321AAD14A0004F1E58 /* Main.storyboard */,
 				508051351AAD14A0004F1E58 /* Images.xcassets */,
 				508051371AAD14A0004F1E58 /* LaunchScreen.xib */,
@@ -184,6 +179,27 @@
 				50B334EB1ACC21BD0090EC2E /* rainbow.jpg */,
 			);
 			name = Images;
+			sourceTree = "<group>";
+		};
+		50B334ED1ACC243E0090EC2E /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				508051301AAD14A0004F1E58 /* ViewController.swift */,
+				50B334BB1AC7D2A10090EC2E /* CreateWordViewController.swift */,
+				50B334C71AC81BA00090EC2E /* ResultViewController.swift */,
+				50B334B71AC7CEBF0090EC2E /* DataViewController.swift */,
+				50B334BD1AC7D3130090EC2E /* ShopViewController.swift */,
+			);
+			name = ViewController;
+			sourceTree = "<group>";
+		};
+		50B334EE1ACC247B0090EC2E /* Database */ = {
+			isa = PBXGroup;
+			children = (
+				50B334BF1AC807510090EC2E /* Word.swift */,
+				50B334EF1ACC24B50090EC2E /* DatabaseHelper.swift */,
+			);
+			name = Database;
 			sourceTree = "<group>";
 		};
 		D75EDA25B445802DECDB9E95 /* Frameworks */ = {
@@ -339,10 +355,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				50B334BC1AC7D2A10090EC2E /* CreateWordViewController.swift in Sources */,
+				50B334F01ACC24B50090EC2E /* DatabaseHelper.swift in Sources */,
 				508051311AAD14A0004F1E58 /* ViewController.swift in Sources */,
 				50B334C21AC808F10090EC2E /* RLMSupport.swift in Sources */,
 				50B334C81AC81BA00090EC2E /* ResultViewController.swift in Sources */,
-				50B334CA1ACA0C3A0090EC2E /* FromLeftSegue.swift in Sources */,
 				50B334BE1AC7D3130090EC2E /* ShopViewController.swift in Sources */,
 				50B334B81AC7CEBF0090EC2E /* DataViewController.swift in Sources */,
 				5080512F1AAD14A0004F1E58 /* AppDelegate.swift in Sources */,
@@ -472,6 +488,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = "World Wide Word/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "World Wide Word/World Wide Word-Bridging-Header.h";
@@ -486,6 +503,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = "World Wide Word/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "World Wide Word/World Wide Word-Bridging-Header.h";

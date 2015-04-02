@@ -9,13 +9,18 @@
 import UIKit
 
 class ResultViewController: ViewController {
-    var v = ""
+    var newWord = ""
+    
+    @IBOutlet weak var newWordLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
 
-        println(v)
+        let dbhelper = DatabaseHelper()
+        newWord = dbhelper.outputNewWord()
+        
+        newWordLabel.text = newWord
     }
     
     override func didReceiveMemoryWarning() {
@@ -25,24 +30,21 @@ class ResultViewController: ViewController {
     
     
     @IBAction func saveWord(sender: AnyObject) {
-        var alertController = UIAlertController(title: "登録しました", message: "", preferredStyle: .Alert)
+        let dbhelper = DatabaseHelper()
+        dbhelper.inputWordToDatabase(self.newWord, registerSpeech: "オリジナル")
         
-        let saveAction:UIAlertAction = UIAlertAction(title: "はい",
-            style: UIAlertActionStyle.Default,
-            handler:{
-                (action:UIAlertAction!) -> Void in
-                    self.registerCreatedWordToDatabase()
-        })
-        
-        alertController.addAction(saveAction)
-        presentViewController(alertController, animated: true, completion: nil)
+        showCompleteAlert()
     }
     
     @IBAction func back(sender: AnyObject) {
         self.dismissViewControllerAnimated(true, completion: nil)
     }
     
-    func registerCreatedWordToDatabase() {
-        
+    override func showCompleteAlert() {
+        let alertController = UIAlertController(title: "登録しました", message: "", preferredStyle: .Alert)
+        let completeAction: UIAlertAction = UIAlertAction(title: "はい", style: .Default, handler: { (action: UIAlertAction!) -> Void in self.dismissViewControllerAnimated(true, completion: nil) } )
+        alertController.addAction(completeAction)
+        self.presentViewController(alertController, animated: true, completion: nil)
     }
+
 }
