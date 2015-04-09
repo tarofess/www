@@ -28,14 +28,21 @@ class CreateWordViewController: ViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        var resultViewController: ResultViewController = segue.destinationViewController as ResultViewController
-        resultViewController.v = "a"
+    func judgeSpeechType() -> (Bool, Bool, Bool) {
+        var isAdOn = (adjective.on) ? true : false
+        var isNounOn = (noun.on) ? true : false
+        var isVerbOn = (verb.on) ? true : false
         
+        return (isAdOn, isNounOn, isVerbOn)
     }
     
-    func judgeSpeechType() {
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        var resultViewController: ResultViewController = segue.destinationViewController as! ResultViewController
         
+        let dbhelper = DatabaseHelper()
+        
+        var type = self.judgeSpeechType()
+        resultViewController.newWord = dbhelper.outputCreatedWord(type.0, isNounOn: type.1, isVerbOn: type.2)
     }
     
 }

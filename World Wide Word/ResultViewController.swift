@@ -16,9 +16,6 @@ class ResultViewController: ViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-
-        let dbhelper = DatabaseHelper()
-        newWord = dbhelper.outputNewWord()
         
         newWordLabel.text = newWord
     }
@@ -32,7 +29,7 @@ class ResultViewController: ViewController {
     @IBAction func saveWord(sender: AnyObject) {
         let dbhelper = DatabaseHelper()
         dbhelper.inputWordToDatabase(self.newWord, registerSpeech: "オリジナル")
-        
+
         showCompleteAlert()
     }
     
