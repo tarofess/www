@@ -44,13 +44,12 @@ class DatabaseHelper {
         return wordData
     }
     
-    func removeWord(speech: String, id: Int) {
+    func removeWord(speech: String, word: Optional<String>) {
         let realm = RLMRealm.defaultRealm()
         realm.transactionWithBlock( { () -> Void in
-        realm.deleteObjects(Word.objectsWhere("id == %d AND speech == %@", id, speech))
-    })
-}
-
+            realm.deleteObjects(Word.objectsWhere("speech == %@ AND word == %@", speech, word!))
+        })
+    }
 
     func outputCreatedWord(isAdOn: Bool, isNounOn: Bool, isVerbOn: Bool) -> String {
         var newWord = ""

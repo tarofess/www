@@ -1,0 +1,18 @@
+PODS:
+  - Bolts (1.1.4)
+  - Parse (1.7.1):
+    - Bolts (~> 1.1)
+  - Realm (0.91.3):
+    - Realm/Headers (= 0.91.3)
+  - Realm/Headers (0.91.3)
+
+DEPENDENCIES:
+  - Parse
+  - Realm
+
+SPEC CHECKSUMS:
+  Bolts: f8e2f94edbf9fec7bb8de5ecaaa3aa6b7de6f64e
+  Parse: fa8ec29de6d82035635986c11946299fb1b38316
+  Realm: 4bfdac6f0f3170a3947c7196e2e9a2e49c943719
+
+COCOAPODS: 0.35.0

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import StoreKit
 
 class ViewController: UIViewController {
     
@@ -21,6 +22,13 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
+        let ud = NSUserDefaults.standardUserDefaults()
+        
+        if (ud.objectForKey("isRegisterdDefaultWord") == nil) {
+            registerDefaultWord()
+        }
+        
+        ud.setBool(true, forKey: "isRegisterdDefaultWord")
     }
 
     override func didReceiveMemoryWarning() {
@@ -28,6 +36,43 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    func registerDefaultWord() {
+        let dbhelper = DatabaseHelper()
+        
+        dbhelper.inputWordToDatabase("海", registerSpeech: "名詞")
+        dbhelper.inputWordToDatabase("ことわざ", registerSpeech: "名詞")
+        dbhelper.inputWordToDatabase("エンターテイナー", registerSpeech: "名詞")
+        dbhelper.inputWordToDatabase("出口", registerSpeech: "名詞")
+        dbhelper.inputWordToDatabase("神様", registerSpeech: "名詞")
+        dbhelper.inputWordToDatabase("ガム", registerSpeech: "名詞")
+        dbhelper.inputWordToDatabase("ジョウロ", registerSpeech: "名詞")
+        dbhelper.inputWordToDatabase("巻物", registerSpeech: "名詞")
+        dbhelper.inputWordToDatabase("カレンダー", registerSpeech: "名詞")
+        dbhelper.inputWordToDatabase("ふでばこ", registerSpeech: "名詞")
+        
+        dbhelper.inputWordToDatabase("動く", registerSpeech: "動詞")
+        dbhelper.inputWordToDatabase("固まる", registerSpeech: "動詞")
+        dbhelper.inputWordToDatabase("口ずさむ", registerSpeech: "動詞")
+        dbhelper.inputWordToDatabase("倒れる", registerSpeech: "動詞")
+        dbhelper.inputWordToDatabase("組み立てる", registerSpeech: "動詞")
+        dbhelper.inputWordToDatabase("守る", registerSpeech: "動詞")
+        dbhelper.inputWordToDatabase("落ちる", registerSpeech: "動詞")
+        dbhelper.inputWordToDatabase("直す", registerSpeech: "動詞")
+        dbhelper.inputWordToDatabase("思い出す", registerSpeech: "動詞")
+        dbhelper.inputWordToDatabase("謝る", registerSpeech: "動詞")
+        
+        dbhelper.inputWordToDatabase("赤い", registerSpeech: "形容詞")
+        dbhelper.inputWordToDatabase("長い", registerSpeech: "形容詞")
+        dbhelper.inputWordToDatabase("優しい", registerSpeech: "形容詞")
+        dbhelper.inputWordToDatabase("ささやかな", registerSpeech: "形容詞")
+        dbhelper.inputWordToDatabase("斬新な", registerSpeech: "形容詞")
+        dbhelper.inputWordToDatabase("おぞましい", registerSpeech: "形容詞")
+        dbhelper.inputWordToDatabase("なれなれしい", registerSpeech: "形容詞")
+        dbhelper.inputWordToDatabase("かわいい", registerSpeech: "形容詞")
+        dbhelper.inputWordToDatabase("頼もしい", registerSpeech: "形容詞")
+        dbhelper.inputWordToDatabase("好奇心旺盛な", registerSpeech: "形容詞")
+    }
+
     // MARK:- picker
 
     func numberOfComponentsInPickerView(pickerview1: UIPickerView) -> Int {
@@ -49,7 +94,7 @@ class ViewController: UIViewController {
     // MARK:- textField
     
     func textFieldShouldReturn(textField: UITextField!) -> Bool{
-        registerWordStore = textField.text
+        registerWordStore = textField.text!
         
         textField.resignFirstResponder()
         return true
@@ -62,20 +107,38 @@ class ViewController: UIViewController {
             
         } else {
             
-            let dbhelper = DatabaseHelper()
-            dbhelper.inputWordToDatabase(self.registerWordStore, registerSpeech: self.registerSpeechStore)
+            if (!checkSameDataExists()) {
             
-            self.textField.text = ""
-            
-            showCompleteAlert()
+                let dbhelper = DatabaseHelper()
+                dbhelper.inputWordToDatabase(self.registerWordStore, registerSpeech: self.registerSpeechStore)
+                
+                self.textField.text = ""
+                
+                showAlert("登録しました", message: "")
+            } else {
+                showAlert("エラー", message: "同じ言葉が既に登録されています")
+            }
         }
     }
     
-    func showCompleteAlert() {
-        let alertController = UIAlertController(title: "登録しました", message: "", preferredStyle: .Alert)
+    func showAlert(title: String, message: String) {
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: .Alert)
         let completeAction: UIAlertAction = UIAlertAction(title: "はい", style: .Default, handler: nil)
         alertController.addAction(completeAction)
         self.presentViewController(alertController, animated: true, completion: nil)
+    }
+    
+    func checkSameDataExists() -> Bool {
+        let dbhelper = DatabaseHelper()
+        let wordData = dbhelper.outputWord(registerSpeechStore)
+        
+        for word in wordData {
+            if (registerWordStore == word) {
+                return true
+            }
+        }
+        
+        return false
     }
 }
 

@@ -16,6 +16,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        
+        Parse.setApplicationId("of65cqmtpjvcXmG8yOhC22BBpZ2djJiHgzjjZtaG", clientKey: "JYz7geJ8nbXU2tFD8qvVpBqgId3NSKeVSvSngjX8")
+        PFPurchase.addObserverForProduct("com.taro.WWW", block: { (transaction: SKPaymentTransaction!) -> Void in
+            // Do Something
+        })
+        
         return true
     }
 

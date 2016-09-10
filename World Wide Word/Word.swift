@@ -12,10 +12,6 @@ class Word: RLMObject {
     dynamic var id = 0
     dynamic var speech = ""
     dynamic var word = ""
-//    dynamic var nounNum = 0
-//    dynamic var verbNum = 0
-//    dynamic var adjectiveNum = 0
-//    dynamic var newWordNum = 0
     
     override class func primaryKey() -> String {
         return "id"

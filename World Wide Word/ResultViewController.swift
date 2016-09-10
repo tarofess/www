@@ -37,9 +37,9 @@ class ResultViewController: ViewController {
         self.dismissViewControllerAnimated(true, completion: nil)
     }
     
-    override func showCompleteAlert() {
+    func showCompleteAlert() {
         let alertController = UIAlertController(title: "登録しました", message: "", preferredStyle: .Alert)
-        let completeAction: UIAlertAction = UIAlertAction(title: "はい", style: .Default, handler: { (action: UIAlertAction!) -> Void in self.dismissViewControllerAnimated(true, completion: nil) } )
+        let completeAction: UIAlertAction = UIAlertAction(title: "はい", style: .Default, handler: { (action: UIAlertAction) -> Void in self.dismissViewControllerAnimated(true, completion: nil) } )
         alertController.addAction(completeAction)
         self.presentViewController(alertController, animated: true, completion: nil)
     }

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		503ACA5E1AE3489300333CB5 /* libPods-Bolts.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 503ACA5C1AE3489300333CB5 /* libPods-Bolts.a */; };
+		503ACA5F1AE3489300333CB5 /* libPods-Parse.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 503ACA5D1AE3489300333CB5 /* libPods-Parse.a */; };
 		5080512F1AAD14A0004F1E58 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5080512E1AAD14A0004F1E58 /* AppDelegate.swift */; };
 		508051311AAD14A0004F1E58 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 508051301AAD14A0004F1E58 /* ViewController.swift */; };
 		508051341AAD14A0004F1E58 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 508051321AAD14A0004F1E58 /* Main.storyboard */; };
@@ -27,7 +29,6 @@
 		50B334E01ACB672C0090EC2E /* summer.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 50B334DF1ACB672C0090EC2E /* summer.jpeg */; };
 		50B334E41ACB67EE0090EC2E /* autumn.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 50B334E31ACB67EE0090EC2E /* autumn.jpg */; };
 		50B334E61ACC1A3D0090EC2E /* winter.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 50B334E51ACC1A3D0090EC2E /* winter.jpg */; };
-		50B334EC1ACC21BD0090EC2E /* rainbow.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 50B334EB1ACC21BD0090EC2E /* rainbow.jpg */; };
 		50B334F01ACC24B50090EC2E /* DatabaseHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B334EF1ACC24B50090EC2E /* DatabaseHelper.swift */; };
 		9FBC042672F7275875F00E4A /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 783B8433A0EFAC078A868E9C /* libPods.a */; };
 /* End PBXBuildFile section */
@@ -44,6 +45,8 @@
 
 /* Begin PBXFileReference section */
 		4EBD5ABE722C4B4C1023EF1A /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		503ACA5C1AE3489300333CB5 /* libPods-Bolts.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libPods-Bolts.a"; path = "Pods/build/Debug-iphoneos/libPods-Bolts.a"; sourceTree = "<group>"; };
+		503ACA5D1AE3489300333CB5 /* libPods-Parse.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libPods-Parse.a"; path = "Pods/build/Debug-iphoneos/libPods-Parse.a"; sourceTree = "<group>"; };
 		508051291AAD14A0004F1E58 /* World Wide Word.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "World Wide Word.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5080512D1AAD14A0004F1E58 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5080512E1AAD14A0004F1E58 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -69,8 +72,8 @@
 		50B334DF1ACB672C0090EC2E /* summer.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = summer.jpeg; sourceTree = "<group>"; };
 		50B334E31ACB67EE0090EC2E /* autumn.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = autumn.jpg; sourceTree = "<group>"; };
 		50B334E51ACC1A3D0090EC2E /* winter.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = winter.jpg; sourceTree = "<group>"; };
-		50B334EB1ACC21BD0090EC2E /* rainbow.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = rainbow.jpg; sourceTree = "<group>"; };
 		50B334EF1ACC24B50090EC2E /* DatabaseHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatabaseHelper.swift; sourceTree = "<group>"; };
+		50DDDE9F1AE33DEB0047566B /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		783B8433A0EFAC078A868E9C /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		7926F74E88573BE7A4CA0B91 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -80,6 +83,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				503ACA5E1AE3489300333CB5 /* libPods-Bolts.a in Frameworks */,
+				503ACA5F1AE3489300333CB5 /* libPods-Parse.a in Frameworks */,
 				9FBC042672F7275875F00E4A /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -176,7 +181,6 @@
 				50B334691AC2E6B70090EC2E /* Idea.png */,
 				50B3346A1AC2E6B70090EC2E /* Shopping Cart.png */,
 				50B334E51ACC1A3D0090EC2E /* winter.jpg */,
-				50B334EB1ACC21BD0090EC2E /* rainbow.jpg */,
 			);
 			name = Images;
 			sourceTree = "<group>";
@@ -205,6 +209,9 @@
 		D75EDA25B445802DECDB9E95 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				503ACA5C1AE3489300333CB5 /* libPods-Bolts.a */,
+				503ACA5D1AE3489300333CB5 /* libPods-Parse.a */,
+				50DDDE9F1AE33DEB0047566B /* StoreKit.framework */,
 				783B8433A0EFAC078A868E9C /* libPods.a */,
 			);
 			name = Frameworks;
@@ -256,6 +263,8 @@
 		508051211AAD14A0004F1E58 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftMigration = 0730;
+				LastSwiftUpdateCheck = 0730;
 				LastUpgradeCheck = 0610;
 				ORGANIZATIONNAME = taro;
 				TargetAttributes = {
@@ -296,7 +305,6 @@
 				50B334E61ACC1A3D0090EC2E /* winter.jpg in Resources */,
 				50B3346C1AC2E6B70090EC2E /* Book Stack.png in Resources */,
 				508051341AAD14A0004F1E58 /* Main.storyboard in Resources */,
-				50B334EC1ACC21BD0090EC2E /* rainbow.jpg in Resources */,
 				50B3346B1AC2E6B70090EC2E /* Ball Point Pen.png in Resources */,
 				508051391AAD14A0004F1E58 /* LaunchScreen.xib in Resources */,
 				508051361AAD14A0004F1E58 /* Images.xcassets in Resources */,
@@ -463,6 +471,7 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer: matsusaki taro (SH2X77WM4Q)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
@@ -490,6 +499,10 @@
 				INFOPLIST_FILE = "World Wide Word/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Pods/build/Debug-iphoneos",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "World Wide Word/World Wide Word-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -502,9 +515,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer: matsusaki taro (SH2X77WM4Q)";
 				INFOPLIST_FILE = "World Wide Word/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Pods/build/Debug-iphoneos",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "World Wide Word/World Wide Word-Bridging-Header.h";
 			};
