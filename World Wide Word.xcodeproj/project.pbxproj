@@ -7,30 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		503ACA5E1AE3489300333CB5 /* libPods-Bolts.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 503ACA5C1AE3489300333CB5 /* libPods-Bolts.a */; };
-		503ACA5F1AE3489300333CB5 /* libPods-Parse.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 503ACA5D1AE3489300333CB5 /* libPods-Parse.a */; };
+		505CE8E71D84E94F00A45343 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 505CE8E61D84E94F00A45343 /* RealmSwift.framework */; };
+		505CE8E91D850B7400A45343 /* WordManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 505CE8E81D850B7400A45343 /* WordManager.swift */; };
 		5080512F1AAD14A0004F1E58 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5080512E1AAD14A0004F1E58 /* AppDelegate.swift */; };
 		508051311AAD14A0004F1E58 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 508051301AAD14A0004F1E58 /* ViewController.swift */; };
 		508051341AAD14A0004F1E58 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 508051321AAD14A0004F1E58 /* Main.storyboard */; };
 		508051361AAD14A0004F1E58 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 508051351AAD14A0004F1E58 /* Images.xcassets */; };
 		508051391AAD14A0004F1E58 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 508051371AAD14A0004F1E58 /* LaunchScreen.xib */; };
 		508051451AAD14A0004F1E58 /* World_Wide_WordTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 508051441AAD14A0004F1E58 /* World_Wide_WordTests.swift */; };
-		50B3346B1AC2E6B70090EC2E /* Ball Point Pen.png in Resources */ = {isa = PBXBuildFile; fileRef = 50B334671AC2E6B70090EC2E /* Ball Point Pen.png */; };
-		50B3346C1AC2E6B70090EC2E /* Book Stack.png in Resources */ = {isa = PBXBuildFile; fileRef = 50B334681AC2E6B70090EC2E /* Book Stack.png */; };
-		50B3346D1AC2E6B70090EC2E /* Idea.png in Resources */ = {isa = PBXBuildFile; fileRef = 50B334691AC2E6B70090EC2E /* Idea.png */; };
-		50B3346E1AC2E6B70090EC2E /* Shopping Cart.png in Resources */ = {isa = PBXBuildFile; fileRef = 50B3346A1AC2E6B70090EC2E /* Shopping Cart.png */; };
 		50B334B81AC7CEBF0090EC2E /* DataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B334B71AC7CEBF0090EC2E /* DataViewController.swift */; };
 		50B334BC1AC7D2A10090EC2E /* CreateWordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B334BB1AC7D2A10090EC2E /* CreateWordViewController.swift */; };
 		50B334BE1AC7D3130090EC2E /* ShopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B334BD1AC7D3130090EC2E /* ShopViewController.swift */; };
 		50B334C01AC807510090EC2E /* Word.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B334BF1AC807510090EC2E /* Word.swift */; };
-		50B334C21AC808F10090EC2E /* RLMSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B334C11AC808F10090EC2E /* RLMSupport.swift */; };
 		50B334C81AC81BA00090EC2E /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B334C71AC81BA00090EC2E /* ResultViewController.swift */; };
-		50B334D61ACB63270090EC2E /* spring.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 50B334D51ACB63270090EC2E /* spring.jpg */; };
-		50B334E01ACB672C0090EC2E /* summer.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 50B334DF1ACB672C0090EC2E /* summer.jpeg */; };
-		50B334E41ACB67EE0090EC2E /* autumn.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 50B334E31ACB67EE0090EC2E /* autumn.jpg */; };
-		50B334E61ACC1A3D0090EC2E /* winter.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 50B334E51ACC1A3D0090EC2E /* winter.jpg */; };
-		50B334F01ACC24B50090EC2E /* DatabaseHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B334EF1ACC24B50090EC2E /* DatabaseHelper.swift */; };
-		9FBC042672F7275875F00E4A /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 783B8433A0EFAC078A868E9C /* libPods.a */; };
+		E7157CA712F4C2171A3AB587 /* Pods_World_Wide_Word.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D334D7FC46AB7315485F062D /* Pods_World_Wide_Word.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,9 +34,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		4EBD5ABE722C4B4C1023EF1A /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		503ACA5C1AE3489300333CB5 /* libPods-Bolts.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libPods-Bolts.a"; path = "Pods/build/Debug-iphoneos/libPods-Bolts.a"; sourceTree = "<group>"; };
 		503ACA5D1AE3489300333CB5 /* libPods-Parse.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libPods-Parse.a"; path = "Pods/build/Debug-iphoneos/libPods-Parse.a"; sourceTree = "<group>"; };
+		505CE8E61D84E94F00A45343 /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = "Build/Products/Release-iphoneos/RealmSwift/RealmSwift.framework"; sourceTree = "<group>"; };
+		505CE8E81D850B7400A45343 /* WordManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WordManager.swift; sourceTree = "<group>"; };
 		508051291AAD14A0004F1E58 /* World Wide Word.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "World Wide Word.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5080512D1AAD14A0004F1E58 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5080512E1AAD14A0004F1E58 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -57,25 +48,15 @@
 		5080513E1AAD14A0004F1E58 /* World Wide WordTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "World Wide WordTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		508051431AAD14A0004F1E58 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		508051441AAD14A0004F1E58 /* World_Wide_WordTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = World_Wide_WordTests.swift; sourceTree = "<group>"; };
-		50B334671AC2E6B70090EC2E /* Ball Point Pen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Ball Point Pen.png"; sourceTree = "<group>"; };
-		50B334681AC2E6B70090EC2E /* Book Stack.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Book Stack.png"; sourceTree = "<group>"; };
-		50B334691AC2E6B70090EC2E /* Idea.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Idea.png; sourceTree = "<group>"; };
-		50B3346A1AC2E6B70090EC2E /* Shopping Cart.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Shopping Cart.png"; sourceTree = "<group>"; };
 		50B334B71AC7CEBF0090EC2E /* DataViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataViewController.swift; sourceTree = "<group>"; };
 		50B334BB1AC7D2A10090EC2E /* CreateWordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateWordViewController.swift; sourceTree = "<group>"; };
 		50B334BD1AC7D3130090EC2E /* ShopViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShopViewController.swift; sourceTree = "<group>"; };
 		50B334BF1AC807510090EC2E /* Word.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Word.swift; sourceTree = "<group>"; };
-		50B334C11AC808F10090EC2E /* RLMSupport.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RLMSupport.swift; sourceTree = "<group>"; };
-		50B334C31AC809F50090EC2E /* World Wide Word-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "World Wide Word-Bridging-Header.h"; sourceTree = "<group>"; };
 		50B334C71AC81BA00090EC2E /* ResultViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
-		50B334D51ACB63270090EC2E /* spring.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = spring.jpg; sourceTree = "<group>"; };
-		50B334DF1ACB672C0090EC2E /* summer.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = summer.jpeg; sourceTree = "<group>"; };
-		50B334E31ACB67EE0090EC2E /* autumn.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = autumn.jpg; sourceTree = "<group>"; };
-		50B334E51ACC1A3D0090EC2E /* winter.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = winter.jpg; sourceTree = "<group>"; };
-		50B334EF1ACC24B50090EC2E /* DatabaseHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatabaseHelper.swift; sourceTree = "<group>"; };
 		50DDDE9F1AE33DEB0047566B /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
-		783B8433A0EFAC078A868E9C /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		7926F74E88573BE7A4CA0B91 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		CF5681B2208632FA74B263F1 /* Pods-World Wide Word.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-World Wide Word.debug.xcconfig"; path = "Pods/Target Support Files/Pods-World Wide Word/Pods-World Wide Word.debug.xcconfig"; sourceTree = "<group>"; };
+		D334D7FC46AB7315485F062D /* Pods_World_Wide_Word.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_World_Wide_Word.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D48EEC39F6C76E9868F1C09D /* Pods-World Wide Word.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-World Wide Word.release.xcconfig"; path = "Pods/Target Support Files/Pods-World Wide Word/Pods-World Wide Word.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,9 +64,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				503ACA5E1AE3489300333CB5 /* libPods-Bolts.a in Frameworks */,
-				503ACA5F1AE3489300333CB5 /* libPods-Parse.a in Frameworks */,
-				9FBC042672F7275875F00E4A /* libPods.a in Frameworks */,
+				505CE8E71D84E94F00A45343 /* RealmSwift.framework in Frameworks */,
+				E7157CA712F4C2171A3AB587 /* Pods_World_Wide_Word.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -99,13 +79,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		04117C6D822BF02ADB97DF45 /* Pods */ = {
+		3B92921809F5971A0BBCF7C8 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				4EBD5ABE722C4B4C1023EF1A /* Pods.debug.xcconfig */,
-				7926F74E88573BE7A4CA0B91 /* Pods.release.xcconfig */,
+				CF5681B2208632FA74B263F1 /* Pods-World Wide Word.debug.xcconfig */,
+				D48EEC39F6C76E9868F1C09D /* Pods-World Wide Word.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		504AEE751D84D45B002F27F9 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				50B334BF1AC807510090EC2E /* Word.swift */,
+				505CE8E81D850B7400A45343 /* WordManager.swift */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 		508051201AAD14A0004F1E58 = {
@@ -114,8 +103,8 @@
 				5080512B1AAD14A0004F1E58 /* World Wide Word */,
 				508051411AAD14A0004F1E58 /* World Wide WordTests */,
 				5080512A1AAD14A0004F1E58 /* Products */,
-				04117C6D822BF02ADB97DF45 /* Pods */,
 				D75EDA25B445802DECDB9E95 /* Frameworks */,
+				3B92921809F5971A0BBCF7C8 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -131,16 +120,12 @@
 		5080512B1AAD14A0004F1E58 /* World Wide Word */ = {
 			isa = PBXGroup;
 			children = (
-				50B334641AC2E5A80090EC2E /* Images */,
-				5080512E1AAD14A0004F1E58 /* AppDelegate.swift */,
+				504AEE751D84D45B002F27F9 /* Model */,
 				50B334ED1ACC243E0090EC2E /* ViewController */,
-				50B334EE1ACC247B0090EC2E /* Database */,
 				508051321AAD14A0004F1E58 /* Main.storyboard */,
 				508051351AAD14A0004F1E58 /* Images.xcassets */,
 				508051371AAD14A0004F1E58 /* LaunchScreen.xib */,
 				5080512C1AAD14A0004F1E58 /* Supporting Files */,
-				50B334C31AC809F50090EC2E /* World Wide Word-Bridging-Header.h */,
-				50B334C11AC808F10090EC2E /* RLMSupport.swift */,
 			);
 			path = "World Wide Word";
 			sourceTree = "<group>";
@@ -170,24 +155,10 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		50B334641AC2E5A80090EC2E /* Images */ = {
-			isa = PBXGroup;
-			children = (
-				50B334D51ACB63270090EC2E /* spring.jpg */,
-				50B334DF1ACB672C0090EC2E /* summer.jpeg */,
-				50B334E31ACB67EE0090EC2E /* autumn.jpg */,
-				50B334671AC2E6B70090EC2E /* Ball Point Pen.png */,
-				50B334681AC2E6B70090EC2E /* Book Stack.png */,
-				50B334691AC2E6B70090EC2E /* Idea.png */,
-				50B3346A1AC2E6B70090EC2E /* Shopping Cart.png */,
-				50B334E51ACC1A3D0090EC2E /* winter.jpg */,
-			);
-			name = Images;
-			sourceTree = "<group>";
-		};
 		50B334ED1ACC243E0090EC2E /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				5080512E1AAD14A0004F1E58 /* AppDelegate.swift */,
 				508051301AAD14A0004F1E58 /* ViewController.swift */,
 				50B334BB1AC7D2A10090EC2E /* CreateWordViewController.swift */,
 				50B334C71AC81BA00090EC2E /* ResultViewController.swift */,
@@ -197,22 +168,14 @@
 			name = ViewController;
 			sourceTree = "<group>";
 		};
-		50B334EE1ACC247B0090EC2E /* Database */ = {
-			isa = PBXGroup;
-			children = (
-				50B334BF1AC807510090EC2E /* Word.swift */,
-				50B334EF1ACC24B50090EC2E /* DatabaseHelper.swift */,
-			);
-			name = Database;
-			sourceTree = "<group>";
-		};
 		D75EDA25B445802DECDB9E95 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				505CE8E61D84E94F00A45343 /* RealmSwift.framework */,
 				503ACA5C1AE3489300333CB5 /* libPods-Bolts.a */,
 				503ACA5D1AE3489300333CB5 /* libPods-Parse.a */,
 				50DDDE9F1AE33DEB0047566B /* StoreKit.framework */,
-				783B8433A0EFAC078A868E9C /* libPods.a */,
+				D334D7FC46AB7315485F062D /* Pods_World_Wide_Word.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -224,11 +187,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 508051481AAD14A0004F1E58 /* Build configuration list for PBXNativeTarget "World Wide Word" */;
 			buildPhases = (
-				B1DD50D0BF31B427F2D9E53D /* Check Pods Manifest.lock */,
+				E391C745A36DA2F4D3E35657 /* [CP] Check Pods Manifest.lock */,
 				508051251AAD14A0004F1E58 /* Sources */,
 				508051261AAD14A0004F1E58 /* Frameworks */,
 				508051271AAD14A0004F1E58 /* Resources */,
-				D1C7E81710302E17C0BC2B6A /* Copy Pods Resources */,
+				E7255F79EAB6686CD94C8310 /* [CP] Embed Pods Frameworks */,
+				DD5D6C7A0F5079EA4069714D /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -301,17 +265,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				50B3346D1AC2E6B70090EC2E /* Idea.png in Resources */,
-				50B334E61ACC1A3D0090EC2E /* winter.jpg in Resources */,
-				50B3346C1AC2E6B70090EC2E /* Book Stack.png in Resources */,
 				508051341AAD14A0004F1E58 /* Main.storyboard in Resources */,
-				50B3346B1AC2E6B70090EC2E /* Ball Point Pen.png in Resources */,
 				508051391AAD14A0004F1E58 /* LaunchScreen.xib in Resources */,
 				508051361AAD14A0004F1E58 /* Images.xcassets in Resources */,
-				50B3346E1AC2E6B70090EC2E /* Shopping Cart.png in Resources */,
-				50B334E01ACB672C0090EC2E /* summer.jpeg in Resources */,
-				50B334D61ACB63270090EC2E /* spring.jpg in Resources */,
-				50B334E41ACB67EE0090EC2E /* autumn.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -325,14 +281,29 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		B1DD50D0BF31B427F2D9E53D /* Check Pods Manifest.lock */ = {
+		DD5D6C7A0F5079EA4069714D /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Check Pods Manifest.lock";
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-World Wide Word/Pods-World Wide Word-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E391C745A36DA2F4D3E35657 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -340,19 +311,19 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		D1C7E81710302E17C0BC2B6A /* Copy Pods Resources */ = {
+		E7255F79EAB6686CD94C8310 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Copy Pods Resources";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-World Wide Word/Pods-World Wide Word-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -363,10 +334,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				50B334BC1AC7D2A10090EC2E /* CreateWordViewController.swift in Sources */,
-				50B334F01ACC24B50090EC2E /* DatabaseHelper.swift in Sources */,
 				508051311AAD14A0004F1E58 /* ViewController.swift in Sources */,
-				50B334C21AC808F10090EC2E /* RLMSupport.swift in Sources */,
 				50B334C81AC81BA00090EC2E /* ResultViewController.swift in Sources */,
+				505CE8E91D850B7400A45343 /* WordManager.swift in Sources */,
 				50B334BE1AC7D3130090EC2E /* ShopViewController.swift in Sources */,
 				50B334B81AC7CEBF0090EC2E /* DataViewController.swift in Sources */,
 				5080512F1AAD14A0004F1E58 /* AppDelegate.swift in Sources */,
@@ -492,39 +462,49 @@
 		};
 		508051491AAD14A0004F1E58 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4EBD5ABE722C4B4C1023EF1A /* Pods.debug.xcconfig */;
+			baseConfigurationReference = CF5681B2208632FA74B263F1 /* Pods-World Wide Word.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Build/Products/Release-iphoneos/RealmSwift",
+				);
 				INFOPLIST_FILE = "World Wide Word/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Pods/build/Debug-iphoneos",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "World Wide Word/World Wide Word-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
 		5080514A1AAD14A0004F1E58 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7926F74E88573BE7A4CA0B91 /* Pods.release.xcconfig */;
+			baseConfigurationReference = D48EEC39F6C76E9868F1C09D /* Pods-World Wide Word.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer: matsusaki taro (SH2X77WM4Q)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Build/Products/Release-iphoneos/RealmSwift",
+				);
 				INFOPLIST_FILE = "World Wide Word/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Pods/build/Debug-iphoneos",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "World Wide Word/World Wide Word-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};

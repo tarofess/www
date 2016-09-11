@@ -7,117 +7,108 @@
 //
 
 import UIKit
+import RealmSwift
 
 class DataViewController: ViewController {
-    var nounData: NSMutableArray = NSMutableArray()
-    var verbData: NSMutableArray = NSMutableArray()
-    var adjectiveData: NSMutableArray = NSMutableArray()
-    var newWordData: NSMutableArray = NSMutableArray()
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var segmentedControl: UISegmentedControl!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
         
-        self.segmentedControl.addTarget(self, action: "changeData:", forControlEvents: .ValueChanged)
+        WordManager.sharedManager.getWordFromDB()
         
-        self.tableView.allowsSelection = false
+        tableView.allowsSelection = false
+        segmentedControl.addTarget(self, action: #selector(DataViewController.changeDataList(_:)), forControlEvents: .ValueChanged)
     }
     
-    override func viewWillAppear(animated: Bool) {
-        super.viewWillAppear(animated)
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
         
-        nounData.removeAllObjects()
-        verbData.removeAllObjects()
-        adjectiveData.removeAllObjects()
-        newWordData.removeAllObjects()
-        
-        let dbhelper = DatabaseHelper()
-        nounData.addObjectsFromArray(dbhelper.outputWord("名詞"))
-        verbData.addObjectsFromArray(dbhelper.outputWord("動詞"))
-        adjectiveData.addObjectsFromArray(dbhelper.outputWord("形容詞"))
-        newWordData.addObjectsFromArray(dbhelper.outputWord("オリジナル"))
-        
-        self.tableView.reloadData()
+        tableView.reloadData()
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch segmentedControl.selectedSegmentIndex {
             case 0:
-                return nounData.count
+                return WordManager.sharedManager.nounArray.count
             case 1:
-                return verbData.count
+                return WordManager.sharedManager.verbArray.count
             case 2:
-                return adjectiveData.count
+                return WordManager.sharedManager.adjectiveArray.count
             default:
-                return newWordData.count
+                return WordManager.sharedManager.originalArray.count
             }
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell: UITableViewCell = UITableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: "Cell")
-        cell.backgroundColor = UIColor.clearColor()
+        let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath)
         
         switch segmentedControl.selectedSegmentIndex {
             case 0:
-                cell.textLabel?.text = nounData.objectAtIndex(indexPath.row) as? String
+                cell.textLabel?.text = WordManager.sharedManager.nounArray[indexPath.row].text
             case 1:
-                cell.textLabel?.text = verbData.objectAtIndex(indexPath.row) as? String
+                cell.textLabel?.text = WordManager.sharedManager.verbArray[indexPath.row].text
             case 2:
-                cell.textLabel?.text = adjectiveData.objectAtIndex(indexPath.row) as? String
+                cell.textLabel?.text = WordManager.sharedManager.adjectiveArray[indexPath.row].text
             default:
-                cell.textLabel?.text = newWordData.objectAtIndex(indexPath.row) as? String
+                cell.textLabel?.text = WordManager.sharedManager.originalArray[indexPath.row].text
             }
 
         return cell
     }
     
-    func tableView(tableView: UITableView!, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath!){
-        
-        if(editingStyle == UITableViewCellEditingStyle.Delete){
-            
-            switch segmentedControl.selectedSegmentIndex {
-            case 0:
-                removeData("名詞", wordData: nounData, indexPath: indexPath)
-                
-            case 1:
-                removeData("動詞", wordData: verbData, indexPath: indexPath)
-                
-            case 2:
-                removeData("形容詞", wordData: adjectiveData, indexPath: indexPath)
-                
-            default:
-                removeData("オリジナル", wordData: newWordData, indexPath: indexPath)
-            }
+    func tableView(tableView: UITableView!, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath!) {
+        if (editingStyle == UITableViewCellEditingStyle.Delete){
+            removeWord(indexPath)
         }
     }
     
-    func changeData(segment: UISegmentedControl) {
-        self.tableView.reloadData()
+    func changeDataList(segment: UISegmentedControl) {
+        tableView.reloadData()
     }
     
-    func removeData(speech: String, wordData: NSMutableArray, indexPath: NSIndexPath!) {
+    func removeWord(indexPath: NSIndexPath!) {
         let alertController = UIAlertController(title: "削除", message: "削除しますか？", preferredStyle: .Alert)
         let okAction = UIAlertAction(title: "はい", style: .Default, handler: { (action: UIAlertAction) -> Void in
+            var word = Word()
             
-            let dbhelper = DatabaseHelper()
-            dbhelper.removeWord(speech, word: (wordData.objectAtIndex(indexPath.row) as? String)!)
+            switch self.segmentedControl.selectedSegmentIndex {
+            case 0:
+                word = WordManager.sharedManager.nounArray[indexPath.row]
+                WordManager.sharedManager.nounArray.removeAtIndex(indexPath.row)
+                
+            case 1:
+                word = WordManager.sharedManager.verbArray[indexPath.row]
+                WordManager.sharedManager.verbArray.removeAtIndex(indexPath.row)
+                
+            case 2:
+                word = WordManager.sharedManager.adjectiveArray[indexPath.row]
+                WordManager.sharedManager.adjectiveArray.removeAtIndex(indexPath.row)
+                
+            default:
+                word = WordManager.sharedManager.originalArray[indexPath.row]
+                WordManager.sharedManager.originalArray.removeAtIndex(indexPath.row)
+            }
             
-            wordData.removeObjectAtIndex(indexPath.row)
+            let realm = try! Realm()
+            try! realm.write {
+                realm.delete(word)
+            }
             self.tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Fade)
-
+            
         })
         let ngAction = UIAlertAction(title: "いいえ", style: .Cancel, handler: nil)
         
         alertController.addAction(ngAction)
         alertController.addAction(okAction)
+        
         self.presentViewController(alertController, animated: true, completion: nil)
     }
+    
 }

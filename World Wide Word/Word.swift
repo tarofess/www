@@ -7,13 +7,16 @@
 //
 
 import Foundation
+import RealmSwift
 
-class Word: RLMObject {
-    dynamic var id = 0
-    dynamic var speech = ""
-    dynamic var word = ""
+class Word: Object {
+    
+    dynamic var id = NSUUID().UUIDString
+    dynamic var speech: String!
+    dynamic var text: String!
     
     override class func primaryKey() -> String {
         return "id"
     }
+    
 }

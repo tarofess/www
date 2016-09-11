@@ -11,82 +11,36 @@ import UIKit
 class CreateWordViewController: ViewController {
     
     @IBOutlet weak var adjective: UISwitch!
-    
     @IBOutlet weak var noun: UISwitch!
-    
     @IBOutlet weak var verb: UISwitch!
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-    }
-    
-    override func viewWillAppear(animated: Bool) {
-        super.viewWillAppear(animated)
-        
-        setSwitchEnable()
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
-    func judgeSpeechType() -> (Bool, Bool, Bool) {
-        let isAdOn = (adjective.on) ? true : false
-        let isNounOn = (noun.on) ? true : false
-        let isVerbOn = (verb.on) ? true : false
+    func createOriginalWord() -> String! {
+        let adjectiveText = adjective.on ? WordManager.sharedManager.adjectiveArray[Int(arc4random_uniform(UInt32(WordManager.sharedManager.adjectiveArray.count - 1)))].text : ""
+        let nounText = noun.on ? WordManager.sharedManager.nounArray[Int(arc4random_uniform(UInt32(WordManager.sharedManager.nounArray.count - 1)))].text : ""
+        let verbText = verb.on ? WordManager.sharedManager.verbArray[Int(arc4random_uniform(UInt32(WordManager.sharedManager.verbArray.count - 1)))].text : ""
         
-        return (isAdOn, isNounOn, isVerbOn)
+        return adjectiveText + nounText + verbText
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         let resultViewController: ResultViewController = segue.destinationViewController as! ResultViewController
         
-        let dbhelper = DatabaseHelper()
-        
         if !adjective.on && noun.on && !verb.on {
-            var nounData1 = dbhelper.outputWord("名詞")
-            var nounData2 = dbhelper.outputWord("名詞")
-            resultViewController.newWord = nounData1[Int(arc4random_uniform(UInt32(nounData1.count)))] + nounData2[Int(arc4random_uniform(UInt32(nounData2.count)))]
-            
+            let nounArray = WordManager.sharedManager.nounArray
+            let noun1 = nounArray[Int(arc4random_uniform(UInt32(nounArray.count - 1)))]
+            let noun2 = nounArray[Int(arc4random_uniform(UInt32(nounArray.count - 1)))]
+            resultViewController.originalWord = noun1.text + noun2.text
         } else {
-        
-            let type = self.judgeSpeechType()
-            resultViewController.newWord = dbhelper.outputCreatedWord(type.0, isNounOn: type.1, isVerbOn: type.2)
+            resultViewController.originalWord = createOriginalWord()
         }
     }
-    
-    func setSwitchEnable() {
-        let nounNum = Word.objectsWhere("speech == '名詞'").count
-        if nounNum == 0 {
-            self.noun.enabled = false
-            self.noun.setOn(false, animated: true)
-            
-        } else {
-            self.noun.enabled = true
-            self.noun.setOn(true, animated: true)
-        }
-        
-        let verbNum = Word.objectsWhere("speech == '動詞'").count
-        if verbNum == 0 {
-            self.verb.enabled = false
-            self.verb.setOn(false, animated: true)
-            
-        } else {
-            self.verb.enabled = true
-            self.verb.setOn(true, animated: true)
-        }
-        
-        let adjectiveNum = Word.objectsWhere("speech == '形容詞'").count
-        if adjectiveNum == 0 {
-            self.adjective.enabled = false
-            self.adjective.setOn(false, animated: true)
-            
-        } else {
-            self.adjective.enabled = true
-            self.adjective.setOn(true, animated: true)
-        }
-    }
+
 }

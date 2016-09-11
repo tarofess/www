@@ -7,28 +7,36 @@
 //
 
 import UIKit
+import RealmSwift
 
 class ResultViewController: ViewController {
-    var newWord = ""
     
-    @IBOutlet weak var newWordLabel: UILabel!
+    @IBOutlet weak var originalWordLabel: UILabel!
+    
+    var originalWord = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
         
-        newWordLabel.text = newWord
+        originalWordLabel.text = originalWord
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
-    
     @IBAction func saveWord(sender: AnyObject) {
-        let dbhelper = DatabaseHelper()
-        dbhelper.inputWordToDatabase(self.newWord, registerSpeech: "オリジナル")
+        let word = Word()
+        word.speech = "オリジナル"
+        word.text = originalWord
+        
+        let realm = try! Realm()
+        try! realm.write {
+            realm.add(word)
+        }
+        
+        WordManager.sharedManager.originalArray.append(word)
+        NSNotificationCenter.defaultCenter().postNotificationName("InsertWord", object: self, userInfo: ["indexPath": WordManager.sharedManager.originalArray.count - 1])
 
         showCompleteAlert()
     }
@@ -38,9 +46,10 @@ class ResultViewController: ViewController {
     }
     
     func showCompleteAlert() {
-        let alertController = UIAlertController(title: "登録しました", message: "", preferredStyle: .Alert)
-        let completeAction: UIAlertAction = UIAlertAction(title: "はい", style: .Default, handler: { (action: UIAlertAction) -> Void in self.dismissViewControllerAnimated(true, completion: nil) } )
+        let alertController = UIAlertController(title: "保存しました", message: "", preferredStyle: .Alert)
+        let completeAction: UIAlertAction = UIAlertAction(title: "OK", style: .Default, handler: { (action: UIAlertAction) -> Void in self.dismissViewControllerAnimated(true, completion: nil) } )
         alertController.addAction(completeAction)
+        
         self.presentViewController(alertController, animated: true, completion: nil)
     }
 
