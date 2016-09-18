@@ -11,7 +11,7 @@ import RealmSwift
 
 class Word: Object {
     
-    dynamic var id = NSUUID().UUIDString
+    dynamic var id = UUID().uuidString
     dynamic var speech: String!
     dynamic var text: String!
     

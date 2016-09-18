@@ -27,25 +27,25 @@ class ViewController: UIViewController {
 
     // MARK:- picker
 
-    func numberOfComponentsInPickerView(pickerview1: UIPickerView) -> Int {
+    func numberOfComponentsInPickerView(_ pickerview1: UIPickerView) -> Int {
         return 1
     }
     
-    func pickerView(pickerview1: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+    func pickerView(_ pickerview1: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         return speechArray.count
     }
     
-    func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String! {
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String! {
         return speechArray[row]
     }
     
-    func pickerView(pickerview1: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+    func pickerView(_ pickerview1: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         speech = speechArray[row]
     }
     
     // MARK:- textField
     
-    func textFieldShouldReturn(textField: UITextField!) -> Bool{
+    func textFieldShouldReturn(_ textField: UITextField!) -> Bool{
         textField.resignFirstResponder()
         
         return true
@@ -53,7 +53,7 @@ class ViewController: UIViewController {
     
     // MARK:- registerButton
     
-    @IBAction func registerWord(sender: AnyObject) {
+    @IBAction func registerWord(_ sender: AnyObject) {
         if textField.text == "" {
             showAlert("エラー", message: "文字を入力してください")
         } else {
@@ -76,18 +76,18 @@ class ViewController: UIViewController {
         }
     }
     
-    func showAlert(title: String, message: String) {
-        let alertController = UIAlertController(title: title, message: message, preferredStyle: .Alert)
-        let completeAction: UIAlertAction = UIAlertAction(title: "はい", style: .Default, handler: nil)
+    func showAlert(_ title: String, message: String) {
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let completeAction: UIAlertAction = UIAlertAction(title: "はい", style: .default, handler: nil)
         alertController.addAction(completeAction)
         
-        self.presentViewController(alertController, animated: true, completion: nil)
+        self.present(alertController, animated: true, completion: nil)
     }
     
     func checkSameDataExists() -> Bool {
         let realm = try! Realm()
         let predicate = NSPredicate(format: "speech = %@ AND text = %@", speech, textField.text!)
-        let words = realm.objects(Word).filter(predicate)
+        let words = realm.objects(Word.self).filter(predicate)
         
         if words.isEmpty {
             return false
@@ -96,7 +96,7 @@ class ViewController: UIViewController {
         }
     }
     
-    func appendWordToArray(word: Word) {
+    func appendWordToArray(_ word: Word) {
         if word.speech == "名詞" {
             WordManager.sharedManager.nounArray.append(word)
         } else if word.speech == "動詞" {

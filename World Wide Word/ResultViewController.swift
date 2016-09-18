@@ -25,7 +25,7 @@ class ResultViewController: ViewController {
         super.didReceiveMemoryWarning()
     }
     
-    @IBAction func saveWord(sender: AnyObject) {
+    @IBAction func saveWord(_ sender: AnyObject) {
         let word = Word()
         word.speech = "オリジナル"
         word.text = originalWord
@@ -36,21 +36,21 @@ class ResultViewController: ViewController {
         }
         
         WordManager.sharedManager.originalArray.append(word)
-        NSNotificationCenter.defaultCenter().postNotificationName("InsertWord", object: self, userInfo: ["indexPath": WordManager.sharedManager.originalArray.count - 1])
+        NotificationCenter.default.post(name: Foundation.Notification.Name(rawValue: "InsertWord"), object: self, userInfo: ["indexPath": WordManager.sharedManager.originalArray.count - 1])
 
         showCompleteAlert()
     }
     
-    @IBAction func back(sender: AnyObject) {
-        self.dismissViewControllerAnimated(true, completion: nil)
+    @IBAction func back(_ sender: AnyObject) {
+        self.dismiss(animated: true, completion: nil)
     }
     
     func showCompleteAlert() {
-        let alertController = UIAlertController(title: "保存しました", message: "", preferredStyle: .Alert)
-        let completeAction: UIAlertAction = UIAlertAction(title: "OK", style: .Default, handler: { (action: UIAlertAction) -> Void in self.dismissViewControllerAnimated(true, completion: nil) } )
+        let alertController = UIAlertController(title: "保存しました", message: "", preferredStyle: .alert)
+        let completeAction: UIAlertAction = UIAlertAction(title: "OK", style: .default, handler: { (action: UIAlertAction) -> Void in self.dismiss(animated: true, completion: nil) } )
         alertController.addAction(completeAction)
         
-        self.presentViewController(alertController, animated: true, completion: nil)
+        self.present(alertController, animated: true, completion: nil)
     }
 
 }
