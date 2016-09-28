@@ -8,6 +8,7 @@
 
 import UIKit
 import RealmSwift
+import GoogleMobileAds
 
 class ShopViewController: ViewController {
     
@@ -15,6 +16,7 @@ class ShopViewController: ViewController {
     @IBOutlet weak var verbSwitch: UISwitch!
     @IBOutlet weak var adjectiveSwitch: UISwitch!
     @IBOutlet weak var purchaseButton: UIButton!
+    @IBOutlet weak var bannerView5: GADBannerView!
     
     var productPrice: String!
     var indicator: UIActivityIndicatorView!
@@ -27,6 +29,7 @@ class ShopViewController: ViewController {
         adjectiveSwitch.addTarget(self, action: #selector(ShopViewController.changeAdje), for: UIControlEvents.valueChanged)
         
         setActivityIndicator()
+        setAd()
     }
     
     override func didReceiveMemoryWarning() {
@@ -159,6 +162,17 @@ class ShopViewController: ViewController {
                 realm.add(word)
             }
         }
+    }
+    
+    //Ad
+    
+    override func setAd() {
+        bannerView5.adUnitID = "ca-app-pub-7727323242900759/9765737025"
+        bannerView5.rootViewController = self
+        bannerView5.load(GADRequest())
+        
+        let gadRequest:GADRequest = GADRequest()
+        gadRequest.testDevices = ["35813d541edaeba54769a1516fc90516"];
     }
     
 }

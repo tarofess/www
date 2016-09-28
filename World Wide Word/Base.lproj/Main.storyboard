@@ -80,12 +80,21 @@
                                                 <constraint firstItem="GFQ-6k-MKg" firstAttribute="leading" secondItem="z3c-yY-lvk" secondAttribute="leading" id="bxn-0G-o7A"/>
                                             </constraints>
                                         </stackView>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jdn-Za-QhW" customClass="GADBannerView">
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="60" id="p3h-gV-oT8"/>
+                                            </constraints>
+                                        </view>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="z3c-yY-lvk" firstAttribute="leading" secondItem="Uub-zM-rK2" secondAttribute="leading" constant="30" id="3uY-12-MF5"/>
                                         <constraint firstAttribute="trailing" secondItem="z3c-yY-lvk" secondAttribute="trailing" constant="30" id="9Dk-WS-JUe"/>
                                         <constraint firstItem="z3c-yY-lvk" firstAttribute="centerX" secondItem="Uub-zM-rK2" secondAttribute="centerX" id="9x0-us-X38"/>
+                                        <constraint firstItem="jdn-Za-QhW" firstAttribute="leading" secondItem="Uub-zM-rK2" secondAttribute="leading" id="F0R-2j-Nj7"/>
                                         <constraint firstItem="z3c-yY-lvk" firstAttribute="centerY" secondItem="Uub-zM-rK2" secondAttribute="centerY" id="UtU-j3-jsR"/>
+                                        <constraint firstAttribute="bottom" secondItem="jdn-Za-QhW" secondAttribute="bottom" id="c1K-bo-zAK"/>
+                                        <constraint firstAttribute="trailing" secondItem="jdn-Za-QhW" secondAttribute="trailing" id="d9w-p7-uB9"/>
                                     </constraints>
                                 </view>
                                 <blurEffect style="light"/>
@@ -107,13 +116,15 @@
                     <navigationItem key="navigationItem" id="g1Q-c2-1Jq"/>
                     <connections>
                         <outlet property="adjective" destination="8HT-lf-dTW" id="tfT-KH-j3e"/>
+                        <outlet property="bannerView" destination="jdn-Za-QhW" id="Pg1-rC-cBL"/>
+                        <outlet property="bannerView2" destination="jdn-Za-QhW" id="yJn-Oy-4mc"/>
                         <outlet property="noun" destination="0in-Wl-WdT" id="yUc-sB-7hi"/>
                         <outlet property="verb" destination="RbQ-HS-zvj" id="IP3-xe-Frb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YPb-LC-Y1t" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-36.5" y="418.5"/>
+            <point key="canvasLocation" x="-37.600000000000001" y="417.8410794602699"/>
         </scene>
         <!--Result View Controller-->
         <scene sceneID="GbY-Z2-yBZ">
@@ -169,12 +180,21 @@
                                                 </button>
                                             </subviews>
                                         </stackView>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WOV-fZ-vSZ" customClass="GADBannerView">
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="60" id="S2i-BN-uiN"/>
+                                            </constraints>
+                                        </view>
                                     </subviews>
                                     <constraints>
                                         <constraint firstAttribute="centerX" secondItem="RPQ-h2-vTH" secondAttribute="centerX" id="I6L-ue-Z9K"/>
+                                        <constraint firstItem="WOV-fZ-vSZ" firstAttribute="leading" secondItem="MiZ-1y-r3h" secondAttribute="leading" id="JcE-ym-nX8"/>
                                         <constraint firstItem="ZQP-FS-Pll" firstAttribute="leading" secondItem="MiZ-1y-r3h" secondAttribute="leading" constant="8" id="aVS-Q0-D81"/>
                                         <constraint firstItem="ZQP-FS-Pll" firstAttribute="top" secondItem="RPQ-h2-vTH" secondAttribute="bottom" constant="8" id="hrD-Wd-1uo"/>
+                                        <constraint firstAttribute="trailing" secondItem="WOV-fZ-vSZ" secondAttribute="trailing" id="nc5-hY-JEl"/>
                                         <constraint firstAttribute="trailing" secondItem="ZQP-FS-Pll" secondAttribute="trailing" constant="8" id="oXr-Ik-acp"/>
+                                        <constraint firstAttribute="bottom" secondItem="WOV-fZ-vSZ" secondAttribute="bottom" id="okz-AA-NvO" customClass="G"/>
                                         <constraint firstItem="RPQ-h2-vTH" firstAttribute="leading" secondItem="MiZ-1y-r3h" secondAttribute="leading" id="v9t-Wa-16m"/>
                                         <constraint firstAttribute="centerY" secondItem="RPQ-h2-vTH" secondAttribute="centerY" id="vOl-nd-og0"/>
                                         <constraint firstAttribute="bottom" secondItem="ZQP-FS-Pll" secondAttribute="bottom" constant="8" id="voD-xT-4Or"/>
@@ -193,6 +213,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="bannerView3" destination="WOV-fZ-vSZ" id="iGg-ea-alW"/>
                         <outlet property="originalWordLabel" destination="RPQ-h2-vTH" id="Pei-Nj-QF6"/>
                     </connections>
                 </viewController>
@@ -265,11 +286,20 @@
                                                 </button>
                                             </subviews>
                                         </stackView>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BmL-u3-sDB" customClass="GADBannerView">
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="60" id="HFG-g6-KNc"/>
+                                            </constraints>
+                                        </view>
                                     </subviews>
                                     <constraints>
                                         <constraint firstAttribute="bottom" secondItem="PeF-93-FbY" secondAttribute="bottom" constant="60" id="3uf-pQ-tDi"/>
+                                        <constraint firstAttribute="trailing" secondItem="BmL-u3-sDB" secondAttribute="trailing" id="EpF-Bk-hdo"/>
                                         <constraint firstItem="PeF-93-FbY" firstAttribute="leading" secondItem="VbE-IA-Y81" secondAttribute="leading" constant="30" id="QNT-cs-SfM"/>
+                                        <constraint firstItem="BmL-u3-sDB" firstAttribute="leading" secondItem="VbE-IA-Y81" secondAttribute="leading" id="YpD-MQ-hHr"/>
                                         <constraint firstItem="PeF-93-FbY" firstAttribute="top" secondItem="VbE-IA-Y81" secondAttribute="top" constant="80" id="arx-2y-ZTG"/>
+                                        <constraint firstAttribute="bottom" secondItem="BmL-u3-sDB" secondAttribute="bottom" constant="49" id="bYb-0A-Zqr"/>
                                         <constraint firstAttribute="trailing" secondItem="PeF-93-FbY" secondAttribute="trailing" constant="30" id="qLH-K6-crg"/>
                                     </constraints>
                                 </view>
@@ -291,6 +321,8 @@
                     <tabBarItem key="tabBarItem" title="ショップ" image="Shopping Cart.png" id="kr7-Nq-9yw"/>
                     <connections>
                         <outlet property="adjectiveSwitch" destination="cnz-rH-tIP" id="i94-rn-AlM"/>
+                        <outlet property="bannerView" destination="BmL-u3-sDB" id="2qf-ij-cS2"/>
+                        <outlet property="bannerView5" destination="BmL-u3-sDB" id="aad-6t-2AN"/>
                         <outlet property="nounSwitch" destination="yc2-ya-KOn" id="tyr-KD-cL0"/>
                         <outlet property="purchaseButton" destination="Gtx-jF-Iby" id="Cja-VJ-kHZ"/>
                         <outlet property="verbSwitch" destination="sbQ-vH-VA5" id="7yC-A0-FbD"/>
@@ -298,7 +330,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XWh-Dj-oAp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-36.5" y="1931.5"/>
+            <point key="canvasLocation" x="-37.600000000000001" y="1930.8845577211396"/>
         </scene>
         <!--データ-->
         <scene sceneID="RkP-Fz-JUw">
@@ -335,7 +367,7 @@
                                         <rect key="frame" x="0.0" y="22" width="343" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="dCV-R8-FLq" id="IOp-Xs-b9z">
-                                            <frame key="frameInset" width="343" height="44"/>
+                                            <frame key="frameInset" width="343" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
@@ -346,6 +378,12 @@
                                     <outlet property="delegate" destination="cDK-Bl-yLH" id="bZ3-jr-fmn"/>
                                 </connections>
                             </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jg6-cU-YSC" customClass="GADBannerView">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="nTB-yM-ZWl"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -354,6 +392,7 @@
                             <constraint firstItem="kwI-tx-Te8" firstAttribute="top" secondItem="KAT-Wx-3Od" secondAttribute="bottom" constant="8" id="9OJ-Ea-w90"/>
                             <constraint firstAttribute="bottom" secondItem="EN3-LU-Gz8" secondAttribute="bottom" id="Dhp-uT-bjo"/>
                             <constraint firstItem="kwI-tx-Te8" firstAttribute="top" secondItem="KAT-Wx-3Od" secondAttribute="bottom" constant="8" id="E8A-m5-qnm"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="jg6-cU-YSC" secondAttribute="trailing" constant="-16" id="Euz-Hf-4oT"/>
                             <constraint firstItem="KAT-Wx-3Od" firstAttribute="trailing" secondItem="cex-lc-NEl" secondAttribute="trailingMargin" id="PnT-2Z-3lT"/>
                             <constraint firstItem="KAT-Wx-3Od" firstAttribute="leading" secondItem="cex-lc-NEl" secondAttribute="leadingMargin" id="QjK-DP-IIf"/>
                             <constraint firstItem="KAT-Wx-3Od" firstAttribute="top" secondItem="Qtd-uC-io9" secondAttribute="bottom" constant="8" id="TEu-ha-kWn"/>
@@ -362,20 +401,23 @@
                             <constraint firstItem="EN3-LU-Gz8" firstAttribute="leading" secondItem="cex-lc-NEl" secondAttribute="leading" id="hqo-FZ-894"/>
                             <constraint firstAttribute="trailing" secondItem="EN3-LU-Gz8" secondAttribute="trailing" id="iFk-h5-17Z"/>
                             <constraint firstItem="EN3-LU-Gz8" firstAttribute="top" secondItem="cex-lc-NEl" secondAttribute="top" id="il5-qO-Mtb"/>
+                            <constraint firstItem="jg6-cU-YSC" firstAttribute="leading" secondItem="cex-lc-NEl" secondAttribute="leadingMargin" constant="-16" id="oUk-lk-2Do"/>
                             <constraint firstItem="kwI-tx-Te8" firstAttribute="leading" secondItem="cex-lc-NEl" secondAttribute="leadingMargin" id="rfl-yX-fDU"/>
                             <constraint firstItem="LmA-xl-VR3" firstAttribute="top" secondItem="kwI-tx-Te8" secondAttribute="bottom" id="tGo-py-LU5"/>
+                            <constraint firstItem="LmA-xl-VR3" firstAttribute="top" secondItem="jg6-cU-YSC" secondAttribute="bottom" id="vnL-pT-xRi"/>
                             <constraint firstItem="kwI-tx-Te8" firstAttribute="trailing" secondItem="cex-lc-NEl" secondAttribute="trailingMargin" id="zBX-bk-5HH"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="データ" image="Book Stack.png" id="6ln-0M-gma"/>
                     <connections>
+                        <outlet property="bannerView4" destination="jg6-cU-YSC" id="SzK-V8-Th1"/>
                         <outlet property="segmentedControl" destination="KAT-Wx-3Od" id="93P-Gj-VhV"/>
                         <outlet property="tableView" destination="kwI-tx-Te8" id="XE1-z0-o5y"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0ak-kP-TFm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-36.5" y="1169.5"/>
+            <point key="canvasLocation" x="-37.600000000000001" y="1168.9655172413793"/>
         </scene>
         <!--登録-->
         <scene sceneID="xYK-hK-7mB">
@@ -394,6 +436,19 @@
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="16K-J5-h8N">
                                     <frame key="frameInset"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vhb-DA-zsF" customClass="GADBannerView">
+                                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="60" id="rsN-0I-H1T"/>
+                                            </constraints>
+                                        </view>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="vhb-DA-zsF" secondAttribute="trailing" id="Dqk-QC-UqN"/>
+                                        <constraint firstItem="vhb-DA-zsF" firstAttribute="leading" secondItem="16K-J5-h8N" secondAttribute="leading" id="gB4-CJ-P4U"/>
+                                        <constraint firstAttribute="bottom" secondItem="vhb-DA-zsF" secondAttribute="bottom" constant="49" id="ybc-Kc-bzk"/>
+                                    </constraints>
                                 </view>
                                 <blurEffect style="light"/>
                             </visualEffectView>
@@ -464,13 +519,14 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="登録" image="Ball Point Pen.png" id="XNB-Hu-viW"/>
                     <connections>
+                        <outlet property="bannerView" destination="vhb-DA-zsF" id="NxR-lI-4e0"/>
                         <outlet property="speechPicker" destination="kVO-TL-hmX" id="Vv2-nH-EpI"/>
                         <outlet property="textField" destination="Sy9-Y5-Axp" id="Lj9-Bi-Ufw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="J8e-5a-7iV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-36.5" y="-334.5"/>
+            <point key="canvasLocation" x="-37.600000000000001" y="-335.08245877061472"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="hxH-f9-uFO">
