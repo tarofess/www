@@ -17,8 +17,6 @@ class DataViewController: ViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        WordManager.sharedManager.getWordFromDB()
-        
         tableView.allowsSelection = false
         segmentedControl.addTarget(self, action: #selector(DataViewController.changeDataList(_:)), for: .valueChanged)
     }
@@ -26,6 +24,7 @@ class DataViewController: ViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
+        WordManager.sharedManager.getWordFromDB()
         tableView.reloadData()
     }
     

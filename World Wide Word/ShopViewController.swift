@@ -88,18 +88,21 @@ class ShopViewController: ViewController {
         return speech
     }
     
-    func showPurchaseAlert(_ title: String, message: String) {
+    func showCompletionAlert(_ title: String, message: String) {
         let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
         let okAction = UIAlertAction(title: "はい", style: .default, handler: nil)
-        
         alertController.addAction(okAction)
         
         self.present(alertController, animated: true, completion: nil)
+        self.indicator.stopAnimating()
+        UIApplication.shared.endIgnoringInteractionEvents()
     }
     
     func getDataFromServer() {
-        let url = URL(string: "http://taro.php.xdomain.jp/word2.php")
-        var request = URLRequest(url: url!)
+        UIApplication.shared.beginIgnoringInteractionEvents()
+        
+        let url = URL(string: "http://taro.php.xdomain.jp/word2.php")!
+        var request = URLRequest(url: url)
         request.httpMethod = "POST"
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         
@@ -110,39 +113,24 @@ class ShopViewController: ViewController {
         
         request.httpBody = try? JSONSerialization.data(withJSONObject: param, options: [])
         
-        let task = URLSession.shared.dataTask(with: request, completionHandler: { (data, response, error) -> Void in
+        let task = URLSession.shared.dataTask(with: request) { (data, response, error) -> Void in
             if error == nil {
-                var result: Data?
-                
                 do {
-                    result = try JSONSerialization.data(withJSONObject: data, options: .prettyPrinted)
+                    if let jsonResult = try JSONSerialization.jsonObject(with: data!, options: .allowFragments) as? [[String: String]] {
+                        self.saveWords(jsonResult: jsonResult)
+                        self.showCompletionAlert("ゲットだぜ！", message: "\(self.getSelectedSpeech())パックをゲットだぜしました")
+                    } else {
+                        self.showCompletionAlert("エラー", message: "現在ゲットだぜできる分の\(self.getSelectedSpeech())パックがありません")
+                    }
                 } catch {
-                    print("jsonError")
+                    self.showCompletionAlert("エラー", message: "なぜかは分かりませんが\(self.getSelectedSpeech())パックをゲットだぜできませんでした")
                 }
-                
-                print(result!)
-                
-//                let fullWord = result as String
-//                let words = fullWord.characters.split { $0 == "," }.map { String($0) }
-//                
-//                if words.count < 30 {
-//                    self.showPurchaseAlert("エラー", message: "現在ゲットだぜできる分の\(self.getSelectedSpeech)パックがありません")
-//                    self.indicator.stopAnimating()
-//                } else {
-////                    let realm = try! Realm()
-////                    try! realm.write {
-////                        for word in words {
-////                            realm.add(word)
-////                        }
-////                    }
-//                    self.indicator.stopAnimating()
-//                }
+                self.indicator.stopAnimating()
                 
             } else {
-                self.showPurchaseAlert("エラー", message: "なぜかは分かりませんが\(self.getSelectedSpeech())パックをゲットだぜできませんでした。")
-                self.indicator.stopAnimating()
+                self.showCompletionAlert("エラー", message: "なぜかは分かりませんが\(self.getSelectedSpeech())パックをゲットだぜできませんでした")
             }
-        })
+        }
         task.resume()
         
         self.indicator.startAnimating()
@@ -159,6 +147,18 @@ class ShopViewController: ViewController {
         }
         
         return wordArray
+    }
+    
+    func saveWords(jsonResult: [[String: String]]) {
+        let realm = try! Realm()
+        try! realm.write {
+            for (key, value) in jsonResult.flatMap({$0}) {
+                let word = Word()
+                word.speech = key
+                word.text = value
+                realm.add(word)
+            }
+        }
     }
     
 }

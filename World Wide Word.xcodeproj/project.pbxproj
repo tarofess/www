@@ -56,6 +56,7 @@
 		50B334C71AC81BA00090EC2E /* ResultViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
 		50DB0C681D898AAB00814514 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = "Build/Products/Release-iphoneos/Realm/Realm.framework"; sourceTree = "<group>"; };
 		50DDDE9F1AE33DEB0047566B /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		50EEE9111D97D30F00B74CA3 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = "Build/Products/Debug-iphoneos/SwiftyJSON/SwiftyJSON.framework"; sourceTree = "<group>"; };
 		CF5681B2208632FA74B263F1 /* Pods-World Wide Word.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-World Wide Word.debug.xcconfig"; path = "Pods/Target Support Files/Pods-World Wide Word/Pods-World Wide Word.debug.xcconfig"; sourceTree = "<group>"; };
 		D334D7FC46AB7315485F062D /* Pods_World_Wide_Word.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_World_Wide_Word.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D48EEC39F6C76E9868F1C09D /* Pods-World Wide Word.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-World Wide Word.release.xcconfig"; path = "Pods/Target Support Files/Pods-World Wide Word/Pods-World Wide Word.release.xcconfig"; sourceTree = "<group>"; };
@@ -174,6 +175,7 @@
 		D75EDA25B445802DECDB9E95 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				50EEE9111D97D30F00B74CA3 /* SwiftyJSON.framework */,
 				50DB0C681D898AAB00814514 /* Realm.framework */,
 				505CE8E61D84E94F00A45343 /* RealmSwift.framework */,
 				503ACA5C1AE3489300333CB5 /* libPods-Bolts.a */,
@@ -490,6 +492,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Build/Products/Release-iphoneos/RealmSwift",
 					"$(PROJECT_DIR)/Build/Products/Release-iphoneos/Realm",
+					"$(PROJECT_DIR)/Build/Products/Debug-iphoneos/SwiftyJSON",
 				);
 				GCC_OPTIMIZATION_LEVEL = 0;
 				INFOPLIST_FILE = "World Wide Word/Info.plist";
@@ -522,6 +525,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Build/Products/Release-iphoneos/RealmSwift",
 					"$(PROJECT_DIR)/Build/Products/Release-iphoneos/Realm",
+					"$(PROJECT_DIR)/Build/Products/Debug-iphoneos/SwiftyJSON",
 				);
 				GCC_OPTIMIZATION_LEVEL = 0;
 				INFOPLIST_FILE = "World Wide Word/Info.plist";
