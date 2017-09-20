@@ -48,7 +48,7 @@ class CreateWordViewController: ViewController {
         }
     }
     
-    //Ad
+    // MARK: -Ad
     
     override func setAd() {
         bannerView2.adUnitID = "ca-app-pub-7727323242900759/9765737025"

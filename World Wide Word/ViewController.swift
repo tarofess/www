@@ -110,7 +110,7 @@ class ViewController: UIViewController {
         }
     }
     
-    //Ad
+    // MARK:- Ad
     
     func setAd() {
         bannerView.adUnitID = "ca-app-pub-7727323242900759/9765737025"

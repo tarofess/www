@@ -57,7 +57,7 @@ class ResultViewController: ViewController {
         self.present(alertController, animated: true, completion: nil)
     }
     
-    //Ad
+    // MARK: -Ad
     
     override func setAd() {
         bannerView3.adUnitID = "ca-app-pub-7727323242900759/9765737025"
