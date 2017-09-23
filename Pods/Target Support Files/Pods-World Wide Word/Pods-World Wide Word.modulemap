@@ -1,6 +1,0 @@
-framework module Pods_World_Wide_Word {
-  umbrella header "Pods-World Wide Word-umbrella.h"
-
-  export *
-  module * { export * }
-}

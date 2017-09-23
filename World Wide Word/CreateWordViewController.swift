@@ -7,20 +7,15 @@
 //
 
 import UIKit
-import GoogleMobileAds
 
 class CreateWordViewController: ViewController {
     
     @IBOutlet weak var adjective: UISwitch!
     @IBOutlet weak var noun: UISwitch!
     @IBOutlet weak var verb: UISwitch!
-    @IBOutlet weak var bannerView2: GADBannerView!
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        setAd()
     }
     
     override func didReceiveMemoryWarning() {
@@ -46,14 +41,6 @@ class CreateWordViewController: ViewController {
         } else {
             resultViewController.originalWord = createOriginalWord()
         }
-    }
-    
-    // MARK: -Ad
-    
-    override func setAd() {
-        bannerView2.adUnitID = "ca-app-pub-7727323242900759/9765737025"
-        bannerView2.rootViewController = self
-        bannerView2.load(GADRequest())
     }
 
 }

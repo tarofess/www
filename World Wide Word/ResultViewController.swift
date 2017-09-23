@@ -8,12 +8,10 @@
 
 import UIKit
 import RealmSwift
-import GoogleMobileAds
 
 class ResultViewController: ViewController {
     
     @IBOutlet weak var originalWordLabel: UILabel!
-    @IBOutlet weak var bannerView3: GADBannerView!
     
     var originalWord = ""
     
@@ -21,8 +19,6 @@ class ResultViewController: ViewController {
         super.viewDidLoad()
         
         originalWordLabel.text = originalWord
-        
-        setAd()
     }
     
     override func didReceiveMemoryWarning() {
@@ -55,14 +51,6 @@ class ResultViewController: ViewController {
         alertController.addAction(completeAction)
         
         self.present(alertController, animated: true, completion: nil)
-    }
-    
-    // MARK: -Ad
-    
-    override func setAd() {
-        bannerView3.adUnitID = "ca-app-pub-7727323242900759/9765737025"
-        bannerView3.rootViewController = self
-        bannerView3.load(GADRequest())
     }
 
 }

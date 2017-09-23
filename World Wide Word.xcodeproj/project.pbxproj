@@ -7,7 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		505CE8E71D84E94F00A45343 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 505CE8E61D84E94F00A45343 /* RealmSwift.framework */; };
+		501E21A51F76AB300055476F /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 501E21A31F76AB300055476F /* Realm.framework */; };
+		501E21A61F76AB300055476F /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 501E21A41F76AB300055476F /* RealmSwift.framework */; };
 		505CE8E91D850B7400A45343 /* WordManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 505CE8E81D850B7400A45343 /* WordManager.swift */; };
 		50617DA71D9BD9F200B6F67E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 50617DA61D9BD9F200B6F67E /* GoogleService-Info.plist */; };
 		5080512F1AAD14A0004F1E58 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5080512E1AAD14A0004F1E58 /* AppDelegate.swift */; };
@@ -21,8 +22,6 @@
 		50B334BE1AC7D3130090EC2E /* ShopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B334BD1AC7D3130090EC2E /* ShopViewController.swift */; };
 		50B334C01AC807510090EC2E /* Word.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B334BF1AC807510090EC2E /* Word.swift */; };
 		50B334C81AC81BA00090EC2E /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B334C71AC81BA00090EC2E /* ResultViewController.swift */; };
-		50DB0C691D898AAB00814514 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50DB0C681D898AAB00814514 /* Realm.framework */; };
-		E7157CA712F4C2171A3AB587 /* Pods_World_Wide_Word.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D334D7FC46AB7315485F062D /* Pods_World_Wide_Word.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,8 +35,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		501E21A31F76AB300055476F /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = Carthage/Build/iOS/Realm.framework; sourceTree = "<group>"; };
+		501E21A41F76AB300055476F /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = Carthage/Build/iOS/RealmSwift.framework; sourceTree = "<group>"; };
 		503ACA5C1AE3489300333CB5 /* libPods-Bolts.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libPods-Bolts.a"; path = "Pods/build/Debug-iphoneos/libPods-Bolts.a"; sourceTree = "<group>"; };
-		503ACA5D1AE3489300333CB5 /* libPods-Parse.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libPods-Parse.a"; path = "Pods/build/Debug-iphoneos/libPods-Parse.a"; sourceTree = "<group>"; };
 		505CE8E61D84E94F00A45343 /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = "Build/Products/Release-iphoneos/RealmSwift/RealmSwift.framework"; sourceTree = "<group>"; };
 		505CE8E81D850B7400A45343 /* WordManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WordManager.swift; sourceTree = "<group>"; };
 		50617DA61D9BD9F200B6F67E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -69,9 +69,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				50DB0C691D898AAB00814514 /* Realm.framework in Frameworks */,
-				505CE8E71D84E94F00A45343 /* RealmSwift.framework in Frameworks */,
-				E7157CA712F4C2171A3AB587 /* Pods_World_Wide_Word.framework in Frameworks */,
+				501E21A51F76AB300055476F /* Realm.framework in Frameworks */,
+				501E21A61F76AB300055476F /* RealmSwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -178,11 +177,12 @@
 		D75EDA25B445802DECDB9E95 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				501E21A31F76AB300055476F /* Realm.framework */,
+				501E21A41F76AB300055476F /* RealmSwift.framework */,
 				50EEE9111D97D30F00B74CA3 /* SwiftyJSON.framework */,
 				50DB0C681D898AAB00814514 /* Realm.framework */,
 				505CE8E61D84E94F00A45343 /* RealmSwift.framework */,
 				503ACA5C1AE3489300333CB5 /* libPods-Bolts.a */,
-				503ACA5D1AE3489300333CB5 /* libPods-Parse.a */,
 				50DDDE9F1AE33DEB0047566B /* StoreKit.framework */,
 				D334D7FC46AB7315485F062D /* Pods_World_Wide_Word.framework */,
 			);
@@ -196,12 +196,10 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 508051481AAD14A0004F1E58 /* Build configuration list for PBXNativeTarget "World Wide Word" */;
 			buildPhases = (
-				E391C745A36DA2F4D3E35657 /* [CP] Check Pods Manifest.lock */,
 				508051251AAD14A0004F1E58 /* Sources */,
 				508051261AAD14A0004F1E58 /* Frameworks */,
 				508051271AAD14A0004F1E58 /* Resources */,
-				E7255F79EAB6686CD94C8310 /* [CP] Embed Pods Frameworks */,
-				DD5D6C7A0F5079EA4069714D /* [CP] Copy Pods Resources */,
+				501E21A71F76AB470055476F /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -295,50 +293,20 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		DD5D6C7A0F5079EA4069714D /* [CP] Copy Pods Resources */ = {
+		501E21A71F76AB470055476F /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/Realm.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/RealmSwift.framework",
 			);
-			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-World Wide Word/Pods-World Wide Word-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		E391C745A36DA2F4D3E35657 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		E7255F79EAB6686CD94C8310 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-World Wide Word/Pods-World Wide Word-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -497,6 +465,7 @@
 					"$(PROJECT_DIR)/Build/Products/Release-iphoneos/RealmSwift",
 					"$(PROJECT_DIR)/Build/Products/Release-iphoneos/Realm",
 					"$(PROJECT_DIR)/Build/Products/Debug-iphoneos/SwiftyJSON",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				GCC_OPTIMIZATION_LEVEL = 0;
 				INFOPLIST_FILE = "World Wide Word/Info.plist";
@@ -530,6 +499,7 @@
 					"$(PROJECT_DIR)/Build/Products/Release-iphoneos/RealmSwift",
 					"$(PROJECT_DIR)/Build/Products/Release-iphoneos/Realm",
 					"$(PROJECT_DIR)/Build/Products/Debug-iphoneos/SwiftyJSON",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				GCC_OPTIMIZATION_LEVEL = 0;
 				INFOPLIST_FILE = "World Wide Word/Info.plist";
