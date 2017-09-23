@@ -37,8 +37,6 @@
 /* Begin PBXFileReference section */
 		501E21A31F76AB300055476F /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = Carthage/Build/iOS/Realm.framework; sourceTree = "<group>"; };
 		501E21A41F76AB300055476F /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = Carthage/Build/iOS/RealmSwift.framework; sourceTree = "<group>"; };
-		503ACA5C1AE3489300333CB5 /* libPods-Bolts.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libPods-Bolts.a"; path = "Pods/build/Debug-iphoneos/libPods-Bolts.a"; sourceTree = "<group>"; };
-		505CE8E61D84E94F00A45343 /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = "Build/Products/Release-iphoneos/RealmSwift/RealmSwift.framework"; sourceTree = "<group>"; };
 		505CE8E81D850B7400A45343 /* WordManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WordManager.swift; sourceTree = "<group>"; };
 		50617DA61D9BD9F200B6F67E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		508051291AAD14A0004F1E58 /* World Wide Word.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "World Wide Word.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -56,12 +54,7 @@
 		50B334BD1AC7D3130090EC2E /* ShopViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShopViewController.swift; sourceTree = "<group>"; };
 		50B334BF1AC807510090EC2E /* Word.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Word.swift; sourceTree = "<group>"; };
 		50B334C71AC81BA00090EC2E /* ResultViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
-		50DB0C681D898AAB00814514 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = "Build/Products/Release-iphoneos/Realm/Realm.framework"; sourceTree = "<group>"; };
 		50DDDE9F1AE33DEB0047566B /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
-		50EEE9111D97D30F00B74CA3 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = "Build/Products/Debug-iphoneos/SwiftyJSON/SwiftyJSON.framework"; sourceTree = "<group>"; };
-		CF5681B2208632FA74B263F1 /* Pods-World Wide Word.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-World Wide Word.debug.xcconfig"; path = "Pods/Target Support Files/Pods-World Wide Word/Pods-World Wide Word.debug.xcconfig"; sourceTree = "<group>"; };
-		D334D7FC46AB7315485F062D /* Pods_World_Wide_Word.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_World_Wide_Word.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		D48EEC39F6C76E9868F1C09D /* Pods-World Wide Word.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-World Wide Word.release.xcconfig"; path = "Pods/Target Support Files/Pods-World Wide Word/Pods-World Wide Word.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,15 +77,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		3B92921809F5971A0BBCF7C8 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				CF5681B2208632FA74B263F1 /* Pods-World Wide Word.debug.xcconfig */,
-				D48EEC39F6C76E9868F1C09D /* Pods-World Wide Word.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
 		504AEE751D84D45B002F27F9 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -109,7 +93,6 @@
 				508051411AAD14A0004F1E58 /* World Wide WordTests */,
 				5080512A1AAD14A0004F1E58 /* Products */,
 				D75EDA25B445802DECDB9E95 /* Frameworks */,
-				3B92921809F5971A0BBCF7C8 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -179,12 +162,7 @@
 			children = (
 				501E21A31F76AB300055476F /* Realm.framework */,
 				501E21A41F76AB300055476F /* RealmSwift.framework */,
-				50EEE9111D97D30F00B74CA3 /* SwiftyJSON.framework */,
-				50DB0C681D898AAB00814514 /* Realm.framework */,
-				505CE8E61D84E94F00A45343 /* RealmSwift.framework */,
-				503ACA5C1AE3489300333CB5 /* libPods-Bolts.a */,
 				50DDDE9F1AE33DEB0047566B /* StoreKit.framework */,
-				D334D7FC46AB7315485F062D /* Pods_World_Wide_Word.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -242,12 +220,12 @@
 					508051281AAD14A0004F1E58 = {
 						CreatedOnToolsVersion = 6.1.1;
 						DevelopmentTeam = 8642FHK38M;
-						LastSwiftMigration = 0800;
+						LastSwiftMigration = 0900;
 						ProvisioningStyle = Automatic;
 					};
 					5080513D1AAD14A0004F1E58 = {
 						CreatedOnToolsVersion = 6.1.1;
-						LastSwiftMigration = 0800;
+						LastSwiftMigration = 0900;
 						TestTargetID = 508051281AAD14A0004F1E58;
 					};
 				};
@@ -453,7 +431,6 @@
 		};
 		508051491AAD14A0004F1E58 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = CF5681B2208632FA74B263F1 /* Pods-World Wide Word.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -479,14 +456,14 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
 		5080514A1AAD14A0004F1E58 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D48EEC39F6C76E9868F1C09D /* Pods-World Wide Word.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -512,7 +489,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.taro.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
@@ -533,7 +511,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.taro.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/World Wide Word.app/World Wide Word";
 			};
 			name = Debug;
@@ -550,7 +529,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.taro.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/World Wide Word.app/World Wide Word";
 			};
 			name = Release;

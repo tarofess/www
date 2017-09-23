@@ -42,17 +42,17 @@ class ShopViewController: ViewController {
         self.view.addSubview(indicator)
     }
     
-    func changeNoun() {
+    @objc func changeNoun() {
         if nounSwitch.isOn {
             verbSwitch.setOn(false, animated: true)
             adjectiveSwitch.setOn(false, animated: true)
         }
     }
-    func changeVerb() {
+    @objc func changeVerb() {
         nounSwitch.setOn(false, animated: true)
         adjectiveSwitch.setOn(false, animated: true)
     }
-    func changeAdje() {
+    @objc func changeAdje() {
         nounSwitch.setOn(false, animated: true)
         verbSwitch.setOn(false, animated: true)
     }

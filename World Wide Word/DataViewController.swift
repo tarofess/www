@@ -68,7 +68,7 @@ class DataViewController: ViewController {
         }
     }
     
-    func changeDataList(_ segment: UISegmentedControl) {
+    @objc func changeDataList(_ segment: UISegmentedControl) {
         tableView.reloadData()
     }
     

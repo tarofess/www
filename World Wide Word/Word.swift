@@ -11,9 +11,9 @@ import RealmSwift
 
 class Word: Object {
     
-    dynamic var id = UUID().uuidString
-    dynamic var speech: String!
-    dynamic var text: String!
+    @objc dynamic var id = UUID().uuidString
+    @objc dynamic var speech: String!
+    @objc dynamic var text: String!
     
     override class func primaryKey() -> String {
         return "id"
