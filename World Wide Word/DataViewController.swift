@@ -50,7 +50,7 @@ class DataViewController: UIViewController {
                 return WordManager.sharedManager.adjectiveArray.count
             default:
                 return WordManager.sharedManager.originalArray.count
-            }
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAtIndexPath indexPath: IndexPath) -> UITableViewCell {

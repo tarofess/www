@@ -122,21 +122,23 @@ class ShopViewController: UIViewController {
         request.httpBody = try? JSONSerialization.data(withJSONObject: param, options: [])
         
         let task = URLSession.shared.dataTask(with: request) { (data, response, error) -> Void in
-            if error == nil {
-                do {
-                    if let jsonResult = try JSONSerialization.jsonObject(with: data!, options: .allowFragments) as? [[String: String]] {
-                        self.saveWords(jsonResult: jsonResult)
-                        self.showCompletionAlert("ゲットだぜ！", message: "\(self.getSelectedSpeech())パックをゲットだぜしました")
-                    } else {
-                        self.showCompletionAlert("エラー", message: "現在ゲットだぜできる分の\(self.getSelectedSpeech())パックがありません")
+            DispatchQueue.main.async {
+                if error == nil {
+                    do {
+                        if let jsonResult = try JSONSerialization.jsonObject(with: data!, options: .allowFragments) as? [[String: String]] {
+                            self.saveWords(jsonResult: jsonResult)
+                            self.showCompletionAlert("ゲットだぜ！", message: "\(self.getSelectedSpeech())パックをゲットだぜしました")
+                        } else {
+                            self.showCompletionAlert("エラー", message: "現在ゲットだぜできる分の\(self.getSelectedSpeech())パックがありません")
+                        }
+                    } catch {
+                        self.showCompletionAlert("エラー", message: "なぜかは分かりませんが\(self.getSelectedSpeech())パックをゲットだぜできませんでした")
                     }
-                } catch {
+                    self.indicator.stopAnimating()
+                    
+                } else {
                     self.showCompletionAlert("エラー", message: "なぜかは分かりませんが\(self.getSelectedSpeech())パックをゲットだぜできませんでした")
                 }
-                self.indicator.stopAnimating()
-                
-            } else {
-                self.showCompletionAlert("エラー", message: "なぜかは分かりませんが\(self.getSelectedSpeech())パックをゲットだぜできませんでした")
             }
         }
         task.resume()
