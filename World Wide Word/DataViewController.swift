@@ -26,8 +26,7 @@ class DataViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        
-        WordManager.sharedManager.getWordFromDB()
+
         tableView.reloadData()
     }
     

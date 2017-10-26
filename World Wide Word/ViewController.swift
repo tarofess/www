@@ -23,6 +23,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         setAd()
+        WordManager.sharedManager.getWordFromDB()
     }
 
     override func didReceiveMemoryWarning() {

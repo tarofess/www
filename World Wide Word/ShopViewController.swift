@@ -112,6 +112,7 @@ class ShopViewController: UIViewController {
         let url = URL(string: "http://taro.php.xdomain.jp/word2.php")!
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
+        request.timeoutInterval = 10.0
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         
         let param = [
