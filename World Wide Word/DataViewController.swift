@@ -8,15 +8,18 @@
 
 import UIKit
 import RealmSwift
+import GoogleMobileAds
 
-class DataViewController: ViewController {
+class DataViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var segmentedControl: UISegmentedControl!
+    @IBOutlet weak var bannerView: GADBannerView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setAd()
         tableView.allowsSelection = false
         segmentedControl.addTarget(self, action: #selector(DataViewController.changeDataList(_:)), for: .valueChanged)
     }
@@ -30,6 +33,11 @@ class DataViewController: ViewController {
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+    }
+    
+    func setAd() {
+        bannerView.adUnitID = "ca-app-pub-7727323242900759/9765737025"
+        bannerView.load(GADRequest())
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

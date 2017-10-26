@@ -8,13 +8,15 @@
 
 import UIKit
 import RealmSwift
+import GoogleMobileAds
 
-class ShopViewController: ViewController {
+class ShopViewController: UIViewController {
     
     @IBOutlet weak var nounSwitch: UISwitch!
     @IBOutlet weak var verbSwitch: UISwitch!
     @IBOutlet weak var adjectiveSwitch: UISwitch!
     @IBOutlet weak var purchaseButton: UIButton!
+    @IBOutlet weak var bannerView: GADBannerView!
     
     var productPrice: String!
     var indicator: UIActivityIndicatorView!
@@ -22,15 +24,21 @@ class ShopViewController: ViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setAd()
+        setActivityIndicator()
+        
         nounSwitch.addTarget(self, action: #selector(ShopViewController.changeNoun), for: UIControlEvents.valueChanged)
         verbSwitch.addTarget(self, action: #selector(ShopViewController.changeVerb), for: UIControlEvents.valueChanged)
-        adjectiveSwitch.addTarget(self, action: #selector(ShopViewController.changeAdje), for: UIControlEvents.valueChanged)
-        
-        setActivityIndicator()
+        adjectiveSwitch.addTarget(self, action: #selector(ShopViewController.changeAdje), for: UIControlEvents.valueChanged) 
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+    }
+    
+    func setAd() {
+        bannerView.adUnitID = "ca-app-pub-7727323242900759/9765737025"
+        bannerView.load(GADRequest())
     }
     
     func setActivityIndicator() {

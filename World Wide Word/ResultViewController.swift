@@ -8,21 +8,29 @@
 
 import UIKit
 import RealmSwift
+import GoogleMobileAds
 
-class ResultViewController: ViewController {
+class ResultViewController: UIViewController {
     
     @IBOutlet weak var originalWordLabel: UILabel!
+    @IBOutlet weak var bannerView: GADBannerView!
     
     var originalWord = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setAd()
         originalWordLabel.text = originalWord
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+    }
+    
+    func setAd() {
+        bannerView.adUnitID = "ca-app-pub-7727323242900759/9765737025"
+        bannerView.load(GADRequest())
     }
     
     @IBAction func saveWord(_ sender: AnyObject) {

@@ -8,21 +8,30 @@
 
 import UIKit
 import RealmSwift
+import GoogleMobileAds
 
 class ViewController: UIViewController {
     
     @IBOutlet weak var speechPicker: UIPickerView!
     @IBOutlet weak var textField: UITextField!
+    @IBOutlet weak var bannerView: GADBannerView!
     
     let speechArray = ["名詞", "動詞", "形容詞"]
     var speech = "名詞"
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        setAd()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+    }
+    
+    func setAd() {
+        bannerView.adUnitID = "ca-app-pub-7727323242900759/9765737025" 
+        bannerView.load(GADRequest())
     }
 
     // MARK:- picker
