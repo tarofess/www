@@ -24,8 +24,15 @@ class DemoObject: Object {
     @objc dynamic var date = NSDate()
 }
 
+#if !swift(>=4.2)
+extension UITableViewCell {
+    typealias CellStyle = UITableViewCellStyle
+    typealias EditingStyle = UITableViewCellEditingStyle
+}
+#endif
+
 class Cell: UITableViewCell {
-    override init(style: UITableViewCellStyle, reuseIdentifier: String!) {
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String!) {
         super.init(style: .subtitle, reuseIdentifier: reuseIdentifier)
     }
 
@@ -96,7 +103,7 @@ class TableViewController: UITableViewController {
         return cell
     }
 
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             realm.beginWrite()
             realm.delete(results[indexPath.row])
@@ -110,13 +117,15 @@ class TableViewController: UITableViewController {
         // Import many items in a background thread
         DispatchQueue.global().async {
             // Get new realm and table since we are in a new thread
-            let realm = try! Realm()
-            realm.beginWrite()
-            for _ in 0..<5 {
-                // Add row via dictionary. Order is ignored.
-                realm.create(DemoObject.self, value: ["title": TableViewController.randomString(), "date": TableViewController.randomDate()])
+            autoreleasepool {
+                let realm = try! Realm()
+                realm.beginWrite()
+                for _ in 0..<5 {
+                    // Add row via dictionary. Order is ignored.
+                    realm.create(DemoObject.self, value: ["title": TableViewController.randomString(), "date": TableViewController.randomDate()])
+                }
+                try! realm.commitWrite()
             }
-            try! realm.commitWrite()
         }
     }
 

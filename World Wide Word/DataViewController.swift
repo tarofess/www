@@ -16,6 +16,8 @@ class DataViewController: UIViewController {
     @IBOutlet weak var segmentedControl: UISegmentedControl!
     @IBOutlet weak var bannerView: GADBannerView!
     
+    var nounArray: Results<String>!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -32,6 +34,14 @@ class DataViewController: UIViewController {
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+    }
+    
+    func getWord() {
+        let realm = try! Realm()
+        nounArray = realm.objects(Word.self).filter("speech = '名詞'").map{$0}
+        verbArray = realm.objects(Word.self).filter("speech = '動詞'").map{$0}
+        adjectiveArray = realm.objects(Word.self).filter("speech = '形容詞'").map{$0}
+        originalArray = realm.objects(Word.self).filter("speech = 'オリジナル'").map{$0}
     }
     
     func setAd() {

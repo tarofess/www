@@ -18,6 +18,8 @@
 
 #import <XCTest/XCTest.h>
 
+// FIXME: Many permission tests appears to fail with the ROS 3.0.0 alpha releases.
+
 #import "RLMSyncTestCase.h"
 
 #import "RLMTestUtils.h"
@@ -36,11 +38,11 @@
 
 static NSURL *makeTestURL(NSString *name, RLMSyncUser *owner) {
     NSString *userID = [owner identity] ?: @"~";
-    return [[NSURL alloc] initWithString:[NSString stringWithFormat:@"realm://localhost:9080/%@/%@", userID, name]];
+    return [[NSURL alloc] initWithString:[NSString stringWithFormat:@"realm://127.0.0.1:9080/%@/%@", userID, name]];
 }
 
 static NSURL *makeTestGlobalURL(NSString *name) {
-    return [[NSURL alloc] initWithString:[NSString stringWithFormat:@"realm://localhost:9080/%@", name]];
+    return [[NSURL alloc] initWithString:[NSString stringWithFormat:@"realm://127.0.0.1:9080/%@", name]];
 }
 
 static NSURL *makeTildeSubstitutedURL(NSURL *url, RLMSyncUser *user) {
@@ -160,6 +162,10 @@ static NSURL *makeTildeSubstitutedURL(NSURL *url, RLMSyncUser *user) {
                                 exact:(BOOL)exact
                                  line:(NSUInteger)line
                                  file:(NSString *)file {
+    // Check first.
+    if ((NSInteger)results.count == count || (!exact && (NSInteger)results.count > count)) {
+        return;
+    }
     XCTestExpectation *ex = [self expectationWithDescription:@"Checking presence of permission..."];
     RLMNotificationToken *token = [results addNotificationBlock:^(RLMResults *r, __unused id c, NSError *err) {
         if (err) {
@@ -978,6 +984,14 @@ static NSURL *makeTildeSubstitutedURL(NSURL *url, RLMSyncUser *user) {
     RLMResults<RLMSyncPermission *> *results = [self getPermissionResultsFor:self.userB
                                                                      message:@"Retrieving the results should work."];
     CHECK_PERMISSION_ABSENT(results, p);
+}
+
+- (void)testRetrievingPermissionsChecksThreadHasRunLoop {
+    [self dispatchAsyncAndWait:^{
+        RLMAssertThrowsWithReason([self.userA retrievePermissionsWithCallback:^(__unused RLMResults *r, __unused NSError *e) {
+            XCTFail(@"callback should not have been invoked");
+        }], @"Can only access or modify permissions from a thread which has a run loop");
+    }];
 }
 
 #pragma mark - Permission offer/response

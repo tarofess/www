@@ -70,16 +70,17 @@ class ViewController: UIViewController {
             if (!checkSameDataExists()) {
                 let word = Word()
                 word.speech = speech
-                word.text = textField.text
+                word.text = textField.text!
                 
                 let realm = try! Realm()
                 try! realm.write {
                     realm.add(word)
                 }
-                textField.text = ""
+                
                 appendWordToArray(word)
                 
                 showAlert("登録しました", message: "")
+                textField.text = ""
             } else {
                 showAlert("エラー", message: "同じ言葉が既に登録されています")
             }

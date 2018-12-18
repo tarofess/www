@@ -9,11 +9,11 @@
 import Foundation
 import RealmSwift
 
-class Word: Object {
+class Word: Object, Codable {
     
     @objc dynamic var id = UUID().uuidString
-    @objc dynamic var speech: String!
-    @objc dynamic var text: String!
+    @objc dynamic var speech = ""
+    @objc dynamic var text = ""
     
     override class func primaryKey() -> String {
         return "id"
