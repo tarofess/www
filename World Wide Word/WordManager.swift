@@ -17,14 +17,48 @@ class WordManager: NSObject {
     var adjectiveArray = [Word]()
     var originalArray = [Word]()
     
-    fileprivate override init() {}
+    private override init() {
+        super.init()
+        
+        nounArray = getWordByType(type: 1)
+        verbArray = getWordByType(type: 2)
+        adjectiveArray = getWordByType(type: 3)
+        originalArray = getWordByType(type: 4)
+    }
     
-    func getWordFromDB() {
+    func getWordByType(type: Int) -> [Word] {
         let realm = try! Realm()
-        nounArray = realm.objects(Word.self).filter("type = 1").map{$0}
-        verbArray = realm.objects(Word.self).filter("type = 2").map{$0}
-        adjectiveArray = realm.objects(Word.self).filter("type = 3").map{$0}
-        originalArray = realm.objects(Word.self).filter("type = 4").map{$0}
+        return realm.objects(Word.self).filter("type = \(type)").map{$0}
     }
 
+    func addWordToDB(type: Int, word: String) {
+        let w = Word()
+        w.type = type
+        w.word = word
+        
+        let realm = try! Realm()
+        try! realm.write {
+            realm.add(w)
+        }
+    }
+    
+    func removeWordFromDB(word: Word) {
+        let realm = try! Realm()
+        try! realm.write {
+            realm.delete(word)
+        }
+    }
+    
+    func isExistsSameData(type: Int, word: String) -> Bool {
+        let realm = try! Realm()
+        let predicate = NSPredicate(format: "type = %d AND word = %@", type, word)
+        let words = realm.objects(Word.self).filter(predicate)
+        
+        if words.isEmpty {
+            return false
+        } else {
+            return true
+        }
+    }
+    
 }

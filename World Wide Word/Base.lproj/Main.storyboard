@@ -644,7 +644,6 @@
         <image name="winter" width="1024" height="768"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="4vb-3b-wb9"/>
         <segue reference="v2a-bw-0cD"/>
     </inferredMetricsTieBreakers>
 </document>

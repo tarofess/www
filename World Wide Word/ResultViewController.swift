@@ -21,42 +21,40 @@ class ResultViewController: UIViewController, GADBannerViewDelegate {
         super.viewDidLoad()
         
         setAd()
-        originalWordLabel.text = originalWord
+        setResult()
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
     
-    func setAd() {
+    private func setAd() {
         bannerView.load(GADRequest())
     }
     
+    private func setResult() {
+        originalWordLabel.text = originalWord
+    }
+    
     @IBAction func saveWord(_ sender: AnyObject) {
-        let word = Word()
-        word.type = 4
-        word.word = originalWord
-        
-        let realm = try! Realm()
-        try! realm.write {
-            realm.add(word)
+        if (!WordManager.sharedManager.isExistsSameData(type: 4, word: originalWord)) {
+            WordManager.sharedManager.addWordToDB(type: 4, word: originalWord)
+            NotificationCenter.default.post(name: Foundation.Notification.Name(rawValue: "InsertWord"), object: self, userInfo: ["indexPath": WordManager.sharedManager.originalArray.count - 1])
+            showResultSaveCompleteAlert()
+        } else {
+            UIUtils.showSimpleAlert("エラー", message: "同じ言葉が既に登録されています", view: self)
         }
         
-        WordManager.sharedManager.originalArray.append(word)
-        NotificationCenter.default.post(name: Foundation.Notification.Name(rawValue: "InsertWord"), object: self, userInfo: ["indexPath": WordManager.sharedManager.originalArray.count - 1])
-
-        showCompleteAlert()
     }
     
     @IBAction func back(_ sender: AnyObject) {
         self.dismiss(animated: true, completion: nil)
     }
     
-    func showCompleteAlert() {
+    private func showResultSaveCompleteAlert() {
         let alertController = UIAlertController(title: "保存しました", message: "", preferredStyle: .alert)
         let completeAction: UIAlertAction = UIAlertAction(title: "OK", style: .default, handler: { (action: UIAlertAction) -> Void in self.dismiss(animated: true, completion: nil) } )
         alertController.addAction(completeAction)
-        
         self.present(alertController, animated: true, completion: nil)
     }
 

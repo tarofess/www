@@ -22,6 +22,7 @@
 		50B334BE1AC7D3130090EC2E /* ShopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B334BD1AC7D3130090EC2E /* ShopViewController.swift */; };
 		50B334C01AC807510090EC2E /* Word.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B334BF1AC807510090EC2E /* Word.swift */; };
 		50B334C81AC81BA00090EC2E /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B334C71AC81BA00090EC2E /* ResultViewController.swift */; };
+		EABCC71A21CA1B2900C7CFEB /* UIUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = EABCC71921CA1B2900C7CFEB /* UIUtils.swift */; };
 		EAD0EB4E1FA178D000554F52 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAD0EB4D1FA178CC00554F52 /* AdSupport.framework */; };
 		EAD0EB501FA178DA00554F52 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAD0EB4F1FA178D700554F52 /* AudioToolbox.framework */; };
 		EAD0EB521FA1791600554F52 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAD0EB511FA1791200554F52 /* AVFoundation.framework */; };
@@ -68,6 +69,7 @@
 		50B334BF1AC807510090EC2E /* Word.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Word.swift; sourceTree = "<group>"; };
 		50B334C71AC81BA00090EC2E /* ResultViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
 		50DDDE9F1AE33DEB0047566B /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		EABCC71921CA1B2900C7CFEB /* UIUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIUtils.swift; sourceTree = "<group>"; };
 		EAD0EB4D1FA178CC00554F52 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
 		EAD0EB4F1FA178D700554F52 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		EAD0EB511FA1791200554F52 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
@@ -192,6 +194,7 @@
 				50B334C71AC81BA00090EC2E /* ResultViewController.swift */,
 				50B334B71AC7CEBF0090EC2E /* DataViewController.swift */,
 				50B334BD1AC7D3130090EC2E /* ShopViewController.swift */,
+				EABCC71921CA1B2900C7CFEB /* UIUtils.swift */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -350,6 +353,7 @@
 				505CE8E91D850B7400A45343 /* WordManager.swift in Sources */,
 				50B334BE1AC7D3130090EC2E /* ShopViewController.swift in Sources */,
 				50B334B81AC7CEBF0090EC2E /* DataViewController.swift in Sources */,
+				EABCC71A21CA1B2900C7CFEB /* UIUtils.swift in Sources */,
 				5080512F1AAD14A0004F1E58 /* AppDelegate.swift in Sources */,
 				50B334C01AC807510090EC2E /* Word.swift in Sources */,
 			);

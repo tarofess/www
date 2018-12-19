@@ -16,11 +16,6 @@ class DataViewController: UIViewController, UITableViewDelegate, UITableViewData
     @IBOutlet weak var segmentedControl: UISegmentedControl!
     @IBOutlet weak var bannerView: GADBannerView!
     
-    var nounArray = [Word]()
-    var verbArray = [Word]()
-    var adjectiveArray = [Word]()
-    var originalArray = [Word]()
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -39,15 +34,7 @@ class DataViewController: UIViewController, UITableViewDelegate, UITableViewData
         super.didReceiveMemoryWarning()
     }
     
-    func getWord() {
-        let realm = try! Realm()
-        nounArray = realm.objects(Word.self).filter("speech = 1").map{$0}
-        verbArray = realm.objects(Word.self).filter("speech = 2").map{$0}
-        adjectiveArray = realm.objects(Word.self).filter("speech = 3").map{$0}
-        originalArray = realm.objects(Word.self).filter("speech = 4").map{$0}
-    }
-    
-    func setAd() {
+    private func setAd() {
         bannerView.load(GADRequest())
     }
     
@@ -91,7 +78,7 @@ class DataViewController: UIViewController, UITableViewDelegate, UITableViewData
         tableView.reloadData()
     }
     
-    func removeWord(_ indexPath: IndexPath!) {
+    private func removeWord(_ indexPath: IndexPath!) {
         let alertController = UIAlertController(title: "削除", message: "削除しますか？", preferredStyle: .alert)
         let okAction = UIAlertAction(title: "はい", style: .default, handler: { (action: UIAlertAction) -> Void in
             var word = Word()
@@ -114,12 +101,8 @@ class DataViewController: UIViewController, UITableViewDelegate, UITableViewData
                 WordManager.sharedManager.originalArray.remove(at: indexPath.row)
             }
             
-            let realm = try! Realm()
-            try! realm.write {
-                realm.delete(word)
-            }
+            WordManager.sharedManager.removeWordFromDB(word: word)
             self.tableView.deleteRows(at: [indexPath], with: UITableViewRowAnimation.fade)
-            
         })
         let ngAction = UIAlertAction(title: "いいえ", style: .cancel, handler: nil)
         

@@ -18,35 +18,38 @@ class ShopViewController: UIViewController {
     @IBOutlet weak var purchaseButton: UIButton!
     @IBOutlet weak var bannerView: GADBannerView!
     
-    var productPrice: String!
-    var indicator: UIActivityIndicatorView!
+    private var productPrice: String!
+    private var indicator: UIActivityIndicatorView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setAd()
         setActivityIndicator()
-        
-        nounSwitch.addTarget(self, action: #selector(ShopViewController.changeNoun), for: UIControlEvents.valueChanged)
-        verbSwitch.addTarget(self, action: #selector(ShopViewController.changeVerb), for: UIControlEvents.valueChanged)
-        adjectiveSwitch.addTarget(self, action: #selector(ShopViewController.changeAdje), for: UIControlEvents.valueChanged) 
+        setSwitchAction()
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
     
-    func setAd() {
+    private func setAd() {
         bannerView.load(GADRequest())
     }
     
-    func setActivityIndicator() {
+    private func setActivityIndicator() {
         indicator = UIActivityIndicatorView()
         indicator.frame = CGRect(x: 0, y: 0, width: 100, height: 100)
         indicator.center = self.view.center
         indicator.hidesWhenStopped = true
         indicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.gray
         self.view.addSubview(indicator)
+    }
+    
+    private func setSwitchAction() {
+        nounSwitch.addTarget(self, action: #selector(ShopViewController.changeNoun), for: UIControlEvents.valueChanged)
+        verbSwitch.addTarget(self, action: #selector(ShopViewController.changeVerb), for: UIControlEvents.valueChanged)
+        adjectiveSwitch.addTarget(self, action: #selector(ShopViewController.changeAdje), for: UIControlEvents.valueChanged)
     }
     
     @objc func changeNoun() {
@@ -68,11 +71,11 @@ class ShopViewController: UIViewController {
         showConfirmAlert()
     }
     
-    func showConfirmAlert() {
+    private func showConfirmAlert() {
         let alertController = UIAlertController(title: "パック欲しい？", message: "パック欲しい？欲しいの？", preferredStyle: .alert)
         let okAction = UIAlertAction(title: "はい", style: .default, handler: {
             (action: UIAlertAction) -> Void in
-            self.getDataFromServer()
+            self.getWordFromServer()
         })
         let ngAction = UIAlertAction(title: "いいえ", style: .cancel, handler: nil)
         alertController.addAction(ngAction)
@@ -81,21 +84,21 @@ class ShopViewController: UIViewController {
         self.present(alertController, animated: true, completion: nil)
     }
     
-    func getSelectedSpeech() -> String {
-        var speech = ""
+    private func getSelectedSpeech() -> Int {
+        var type = 0
         
         if nounSwitch.isOn {
-            speech = "名詞"
+            type = 1
         } else if verbSwitch.isOn {
-            speech = "動詞"
+            type = 2
         } else {
-            speech = "形容詞"
+            type = 3
         }
 
-        return speech
+        return type
     }
     
-    func showCompletionAlert(_ title: String, message: String) {
+    private func showCompletionAlert(_ title: String, message: String) {
         let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
         let okAction = UIAlertAction(title: "はい", style: .default, handler: nil)
         alertController.addAction(okAction)
@@ -105,7 +108,7 @@ class ShopViewController: UIViewController {
         UIApplication.shared.endIgnoringInteractionEvents()
     }
     
-    func getDataFromServer() {
+    private func getWordFromServer() {
         UIApplication.shared.beginIgnoringInteractionEvents()
         
         let url = URL(string: "http://taro.php.xdomain.jp/word2.php")!
@@ -115,8 +118,8 @@ class ShopViewController: UIViewController {
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         
         let param = [
-                "speech": self.getSelectedSpeech(),
-                "words": self.makePostWord(self.getSelectedSpeech())
+                "type": self.getSelectedSpeech(),
+                "myWords": self.getMyWords(self.getSelectedSpeech())
             ] as [String : Any]
         
         request.httpBody = try? JSONSerialization.data(withJSONObject: param, options: [])
@@ -125,7 +128,7 @@ class ShopViewController: UIViewController {
             DispatchQueue.main.async {
                 if error == nil {
                     do {
-                        if let jsonResult = try JSONSerialization.jsonObject(with: data!, options: .allowFragments) as? [[String: String]] {
+                        if let jsonResult = try JSONSerialization.jsonObject(with: data!, options: .allowFragments) as? [[Int: String]] {
                             self.saveWords(jsonResult: jsonResult)
                             self.showCompletionAlert("ゲットだぜ！", message: "\(self.getSelectedSpeech())パックをゲットだぜしました")
                         } else {
@@ -146,29 +149,16 @@ class ShopViewController: UIViewController {
         self.indicator.startAnimating()
     }
     
-    func makePostWord(_ speech: String) -> Array<String> {
-        var wordArray: [String] = []
-        
-//        let realm = try! Realm()
-//        let words = realm.objects(Word.self).filter("speech = %@", speech).map{$0}
-//
-//        for word in words {
-//            wordArray.append(word.word)
-//        }
-        
-        return wordArray
+    private func getMyWords(_ type: Int) -> Array<String> {
+        let myWords = WordManager.sharedManager.getWordByType(type: type)
+        let wordStringArray = myWords.map({$0.word})
+        return wordStringArray
     }
     
-    func saveWords(jsonResult: [[String: String]]) {
-//        let realm = try! Realm()
-//        try! realm.write {
-//            for (key, value) in jsonResult.flatMap({$0}) {
-//                let word = Word()
-//                word.type = key
-//                word.word = value
-//                realm.add(word)
-//            }
-//        }
+    private func saveWords(jsonResult: [[Int: String]]) {
+        for (key, value) in jsonResult.flatMap({$0}) {
+            WordManager.sharedManager.addWordToDB(type: key, word: value)
+        }
     }
     
 }

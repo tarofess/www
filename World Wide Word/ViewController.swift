@@ -10,27 +10,26 @@ import UIKit
 import RealmSwift
 import GoogleMobileAds
 
-class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, GADBannerViewDelegate {
+class ViewController: UIViewController, UITextFieldDelegate, UIPickerViewDelegate, UIPickerViewDataSource, GADBannerViewDelegate {
     
     @IBOutlet weak var speechPicker: UIPickerView!
     @IBOutlet weak var textField: UITextField!
     @IBOutlet weak var bannerView: GADBannerView!
     
-    let speechs = ["名詞", "動詞", "形容詞"]
-    var selectedSpeech = 1
+    private let speechs = ["名詞", "動詞", "形容詞"]
+    private var selectedSpeech = 1
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setAd()
-        WordManager.sharedManager.getWordFromDB()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
     
-    func setAd() {
+    private func setAd() {
         bannerView.load(GADRequest())
     }
 
@@ -54,7 +53,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     
     // MARK:- textField
     
-    func textFieldShouldReturn(_ textField: UITextField!) -> Bool{
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool{
         textField.resignFirstResponder()
         
         return true
@@ -64,55 +63,15 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     
     @IBAction func registerWord(_ sender: AnyObject) {
         if textField.text == "" {
-            showAlert("エラー", message: "文字を入力してください")
+            UIUtils.showSimpleAlert("エラー", message: "文字を入力してください", view: self)
         } else {
-            if (!checkSameDataExists()) {
-                let word = Word()
-                word.type = selectedSpeech
-                word.word = textField.text!
-                
-                let realm = try! Realm()
-                try! realm.write {
-                    realm.add(word)
-                }
-                
-                appendWordToArray(word)
-                
-                showAlert("登録しました", message: "")
+            if (!WordManager.sharedManager.isExistsSameData(type: selectedSpeech, word: textField.text!)) {
+                WordManager.sharedManager.addWordToDB(type: selectedSpeech, word: textField.text!)
+                UIUtils.showSimpleAlert("登録しました", message: "", view: self)
                 textField.text = ""
             } else {
-                showAlert("エラー", message: "同じ言葉が既に登録されています")
+                UIUtils.showSimpleAlert("エラー", message: "同じ言葉が既に登録されています", view: self)
             }
-        }
-    }
-    
-    func showAlert(_ title: String, message: String) {
-        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        let completeAction: UIAlertAction = UIAlertAction(title: "はい", style: .default, handler: nil)
-        alertController.addAction(completeAction)
-        
-        self.present(alertController, animated: true, completion: nil)
-    }
-    
-    func checkSameDataExists() -> Bool {
-        let realm = try! Realm()
-        let predicate = NSPredicate(format: "speech = %@ AND text = %@", selectedSpeech, textField.text!)
-        let words = realm.objects(Word.self).filter(predicate)
-        
-        if words.isEmpty {
-            return false
-        } else {
-            return true
-        }
-    }
-    
-    func appendWordToArray(_ word: Word) {
-        if word.type == 1 {
-            WordManager.sharedManager.nounArray.append(word)
-        } else if word.type == 2 {
-            WordManager.sharedManager.verbArray.append(word)
-        } else {
-            WordManager.sharedManager.adjectiveArray.append(word)
         }
     }
     

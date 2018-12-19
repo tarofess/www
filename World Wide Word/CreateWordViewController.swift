@@ -26,11 +26,11 @@ class CreateWordViewController: UIViewController, GADBannerViewDelegate {
         super.didReceiveMemoryWarning()
     }
     
-    func setAd() {
+    private func setAd() {
         bannerView.load(GADRequest())
     }
     
-    func createOriginalWord() -> String! {
+    private func createOriginalWord() -> String! {
         let adjectiveText: String = adjective.isOn ? WordManager.sharedManager.adjectiveArray[Int(arc4random_uniform(UInt32(WordManager.sharedManager.adjectiveArray.count - 1)))].word : ""
         let nounText: String = noun.isOn ? WordManager.sharedManager.nounArray[Int(arc4random_uniform(UInt32(WordManager.sharedManager.nounArray.count - 1)))].word : ""
         let verbText: String = verb.isOn ? WordManager.sharedManager.verbArray[Int(arc4random_uniform(UInt32(WordManager.sharedManager.verbArray.count - 1)))].word : ""

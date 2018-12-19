@@ -47,7 +47,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
     
-    func registerDefaultWord() {
+    private func registerDefaultWord() {
         let nounArray = [createInitialWord(1, text: "海"),
                          createInitialWord(1, text: "ことわざ"),
                          createInitialWord(1, text: "エンターテイナー"),
@@ -79,6 +79,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                               createInitialWord(3, text: "頼もしい"),
                               createInitialWord(3, text: "好奇心旺盛な")]
         
+        addWordToDB(nounArray: nounArray, verbArray: verbArray, adjectiveArray: adjectiveArray)
+    }
+    
+    private func createInitialWord(_ type: Int, text: String) -> Word {
+        let word = Word()
+        word.type = type
+        word.word = text
+        
+        return word
+    }
+    
+    private func addWordToDB(nounArray: [Word], verbArray: [Word], adjectiveArray: [Word]) {
         let realm = try! Realm()
         try! realm.write {
             for noun in nounArray {
@@ -91,14 +103,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 realm.add(adjective)
             }
         }
-    }
-    
-    func createInitialWord(_ type: Int, text: String) -> Word {
-        let word = Word()
-        word.type = type
-        word.word = text
-        
-        return word
     }
 
 }
