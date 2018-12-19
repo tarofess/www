@@ -10,7 +10,7 @@ import UIKit
 import RealmSwift
 import GoogleMobileAds
 
-class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
+class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, GADBannerViewDelegate {
     
     @IBOutlet weak var speechPicker: UIPickerView!
     @IBOutlet weak var textField: UITextField!
@@ -31,7 +31,6 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     }
     
     func setAd() {
-        bannerView.adUnitID = "ca-app-pub-7727323242900759/9765737025" 
         bannerView.load(GADRequest())
     }
 

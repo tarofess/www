@@ -102,6 +102,9 @@
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="60" id="p3h-gV-oT8"/>
                                             </constraints>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="string" keyPath="adUnitID" value="ca-app-pub-7727323242900759/9765737025"/>
+                                            </userDefinedRuntimeAttributes>
                                             <connections>
                                                 <outlet property="delegate" destination="Iuc-Vh-w1U" id="4nc-hR-9Oj"/>
                                                 <outlet property="rootViewController" destination="Iuc-Vh-w1U" id="0Dy-yk-I5U"/>
@@ -130,10 +133,11 @@
                             <constraint firstItem="BiV-al-la0" firstAttribute="leading" secondItem="UiG-XL-KKW" secondAttribute="leading" id="XRP-aU-WXh"/>
                             <constraint firstItem="BiV-al-la0" firstAttribute="top" secondItem="CrI-3i-kUV" secondAttribute="top" id="Z48-gO-fOj"/>
                             <constraint firstItem="DB2-D9-lrw" firstAttribute="leading" secondItem="UiG-XL-KKW" secondAttribute="leading" id="cLU-dK-jk7"/>
-                            <constraint firstItem="UiG-XL-KKW" firstAttribute="bottom" secondItem="BiV-al-la0" secondAttribute="bottom" id="hcw-7B-sEW"/>
+                            <constraint firstAttribute="bottom" secondItem="BiV-al-la0" secondAttribute="bottom" id="hcw-7B-sEW"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="UiG-XL-KKW"/>
                     </view>
+                    <extendedEdge key="edgesForExtendedLayout" top="YES"/>
                     <tabBarItem key="tabBarItem" title="作成" image="Idea.png" id="o7n-F5-Qvm"/>
                     <navigationItem key="navigationItem" id="g1Q-c2-1Jq"/>
                     <connections>
@@ -147,7 +151,7 @@
             </objects>
             <point key="canvasLocation" x="-37.600000000000001" y="417.8410794602699"/>
         </scene>
-        <!--Result View Controller-->
+        <!--Delegate-->
         <scene sceneID="GbY-Z2-yBZ">
             <objects>
                 <viewController id="RPf-Yb-F9a" customClass="ResultViewController" customModule="World_Wide_Word" customModuleProvider="target" sceneMemberID="viewController">
@@ -208,6 +212,13 @@
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="60" id="S2i-BN-uiN"/>
                                             </constraints>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="string" keyPath="adUnitID" value="ca-app-pub-7727323242900759/9765737025"/>
+                                            </userDefinedRuntimeAttributes>
+                                            <connections>
+                                                <outlet property="delegate" destination="RPf-Yb-F9a" id="P3p-G3-h7v"/>
+                                                <outlet property="rootViewController" destination="RPf-Yb-F9a" id="P1G-LF-FFy"/>
+                                            </connections>
                                         </view>
                                     </subviews>
                                     <constraints>
@@ -250,23 +261,23 @@
             <objects>
                 <viewController id="gne-d8-dHe" customClass="ShopViewController" customModule="World_Wide_Word" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="IvI-mX-ST4">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="winter" translatesAutoresizingMaskIntoConstraints="NO" id="I7T-Ss-iwv">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
                             </imageView>
                             <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cUy-WU-xgV">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="VbE-IA-Y81">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="PeF-93-FbY">
-                                            <rect key="frame" x="30" y="80" width="315" height="527"/>
+                                            <rect key="frame" x="30" y="80" width="315" height="478"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="HNq-VD-Ukm">
-                                                    <rect key="frame" x="57" y="0.0" width="201" height="329"/>
+                                                    <rect key="frame" x="57" y="0.0" width="201" height="298.5"/>
                                                     <subviews>
                                                         <stackView opaque="NO" contentMode="scaleToFill" spacing="60" translatesAutoresizingMaskIntoConstraints="NO" id="fuO-mW-dxN">
                                                             <rect key="frame" x="0.0" y="0.0" width="201" height="31"/>
@@ -283,7 +294,7 @@
                                                             </subviews>
                                                         </stackView>
                                                         <stackView opaque="NO" contentMode="scaleToFill" spacing="60" translatesAutoresizingMaskIntoConstraints="NO" id="JQc-yy-e5O">
-                                                            <rect key="frame" x="0.0" y="149" width="201" height="31"/>
+                                                            <rect key="frame" x="0.0" y="133.5" width="201" height="31"/>
                                                             <subviews>
                                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="sbQ-vH-VA5">
                                                                     <rect key="frame" x="0.0" y="0.0" width="51" height="31"/>
@@ -297,7 +308,7 @@
                                                             </subviews>
                                                         </stackView>
                                                         <stackView opaque="NO" contentMode="scaleToFill" spacing="60" translatesAutoresizingMaskIntoConstraints="NO" id="LdI-Nz-Fca">
-                                                            <rect key="frame" x="0.0" y="298" width="201" height="31"/>
+                                                            <rect key="frame" x="0.0" y="267.5" width="201" height="31"/>
                                                             <subviews>
                                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="cnz-rH-tIP">
                                                                     <rect key="frame" x="0.0" y="0.0" width="51" height="31"/>
@@ -313,7 +324,7 @@
                                                     </subviews>
                                                 </stackView>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gtx-jF-Iby">
-                                                    <rect key="frame" x="106.5" y="349" width="102" height="178"/>
+                                                    <rect key="frame" x="106.5" y="318.5" width="102" height="159.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                     <state key="normal" title="ゲットだぜ">
                                                         <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -330,6 +341,9 @@
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="60" id="HFG-g6-KNc"/>
                                             </constraints>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="string" keyPath="adUnitID" value="ca-app-pub-7727323242900759/9765737025"/>
+                                            </userDefinedRuntimeAttributes>
                                             <connections>
                                                 <outlet property="delegate" destination="gne-d8-dHe" id="e47-AY-OoK"/>
                                                 <outlet property="rootViewController" destination="gne-d8-dHe" id="4cY-aa-bkm"/>
@@ -342,7 +356,7 @@
                                         <constraint firstItem="PeF-93-FbY" firstAttribute="leading" secondItem="VbE-IA-Y81" secondAttribute="leading" constant="30" id="QNT-cs-SfM"/>
                                         <constraint firstItem="BmL-u3-sDB" firstAttribute="leading" secondItem="VbE-IA-Y81" secondAttribute="leading" id="YpD-MQ-hHr"/>
                                         <constraint firstItem="PeF-93-FbY" firstAttribute="top" secondItem="VbE-IA-Y81" secondAttribute="top" constant="80" id="arx-2y-ZTG"/>
-                                        <constraint firstAttribute="bottom" secondItem="BmL-u3-sDB" secondAttribute="bottom" constant="49" id="bYb-0A-Zqr"/>
+                                        <constraint firstAttribute="bottom" secondItem="BmL-u3-sDB" secondAttribute="bottom" id="bYb-0A-Zqr"/>
                                         <constraint firstAttribute="trailing" secondItem="PeF-93-FbY" secondAttribute="trailing" constant="30" id="qLH-K6-crg"/>
                                     </constraints>
                                 </view>
@@ -362,6 +376,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Tnm-9S-O4R"/>
                     </view>
+                    <extendedEdge key="edgesForExtendedLayout" top="YES"/>
                     <tabBarItem key="tabBarItem" title="ショップ" image="Shopping Cart.png" id="kr7-Nq-9yw"/>
                     <connections>
                         <outlet property="adjectiveSwitch" destination="cnz-rH-tIP" id="i94-rn-AlM"/>
@@ -380,16 +395,16 @@
             <objects>
                 <viewController id="cDK-Bl-yLH" customClass="DataViewController" customModule="World_Wide_Word" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="cex-lc-NEl">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" alpha="0.49999999999999961" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="autumn" translatesAutoresizingMaskIntoConstraints="NO" id="EN3-LU-Gz8">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
                             </imageView>
                             <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="o3L-ka-jo3">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="658"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="609"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="pjy-Wb-msy">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="658"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="609"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 </view>
                                 <blurEffect style="light"/>
@@ -428,6 +443,9 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="nTB-yM-ZWl"/>
                                 </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="adUnitID" value="ca-app-pub-7727323242900759/9765737025"/>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <outlet property="delegate" destination="cDK-Bl-yLH" id="liH-Zf-tGe"/>
                                     <outlet property="rootViewController" destination="cDK-Bl-yLH" id="EXy-b6-exQ"/>
@@ -453,11 +471,12 @@
                             <constraint firstItem="jg6-cU-YSC" firstAttribute="leading" secondItem="cex-lc-NEl" secondAttribute="leadingMargin" constant="-16" id="oUk-lk-2Do"/>
                             <constraint firstItem="kwI-tx-Te8" firstAttribute="leading" secondItem="cex-lc-NEl" secondAttribute="leadingMargin" id="rfl-yX-fDU"/>
                             <constraint firstItem="fOV-hI-XoK" firstAttribute="bottom" secondItem="kwI-tx-Te8" secondAttribute="bottom" id="tGo-py-LU5"/>
-                            <constraint firstItem="fOV-hI-XoK" firstAttribute="bottom" secondItem="jg6-cU-YSC" secondAttribute="bottom" id="vnL-pT-xRi"/>
+                            <constraint firstAttribute="bottom" secondItem="jg6-cU-YSC" secondAttribute="bottom" id="vnL-pT-xRi"/>
                             <constraint firstItem="kwI-tx-Te8" firstAttribute="trailing" secondItem="cex-lc-NEl" secondAttribute="trailingMargin" id="zBX-bk-5HH"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="fOV-hI-XoK"/>
                     </view>
+                    <extendedEdge key="edgesForExtendedLayout" top="YES"/>
                     <tabBarItem key="tabBarItem" title="データ" image="Book Stack.png" id="6ln-0M-gma"/>
                     <connections>
                         <outlet property="bannerView" destination="jg6-cU-YSC" id="qh1-0w-V19"/>
@@ -474,24 +493,27 @@
             <objects>
                 <viewController id="joZ-J8-APT" customClass="ViewController" customModule="World_Wide_Word" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="V1N-uv-XcX">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="spring" translatesAutoresizingMaskIntoConstraints="NO" id="X72-8m-zWh">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
                             </imageView>
                             <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vVj-Jh-1n4">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="16K-J5-h8N">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vhb-DA-zsF" customClass="GADBannerView">
-                                            <rect key="frame" x="0.0" y="607" width="375" height="60"/>
+                                            <rect key="frame" x="0.0" y="558" width="375" height="60"/>
                                             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="60" id="rsN-0I-H1T"/>
                                             </constraints>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="string" keyPath="adUnitID" value="ca-app-pub-7727323242900759/9765737025"/>
+                                            </userDefinedRuntimeAttributes>
                                             <connections>
                                                 <outlet property="delegate" destination="joZ-J8-APT" id="DCI-yd-zTD"/>
                                                 <outlet property="rootViewController" destination="joZ-J8-APT" id="gTD-7p-vPg"/>
@@ -577,6 +599,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="EbO-m3-H7K"/>
                     </view>
+                    <extendedEdge key="edgesForExtendedLayout" top="YES"/>
                     <tabBarItem key="tabBarItem" title="登録" image="Ball Point Pen.png" id="XNB-Hu-viW"/>
                     <connections>
                         <outlet property="bannerView" destination="vhb-DA-zsF" id="e9B-m8-UXJ"/>
@@ -621,6 +644,7 @@
         <image name="winter" width="1024" height="768"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="4vb-3b-wb9"/>
         <segue reference="v2a-bw-0cD"/>
     </inferredMetricsTieBreakers>
 </document>

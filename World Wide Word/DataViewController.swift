@@ -10,7 +10,7 @@ import UIKit
 import RealmSwift
 import GoogleMobileAds
 
-class DataViewController: UIViewController {
+class DataViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, GADBannerViewDelegate {
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var segmentedControl: UISegmentedControl!
@@ -41,14 +41,13 @@ class DataViewController: UIViewController {
     
     func getWord() {
         let realm = try! Realm()
-        nounArray = realm.objects(Word.self).filter("speech = '名詞'").map{$0}
-        verbArray = realm.objects(Word.self).filter("speech = '動詞'").map{$0}
-        adjectiveArray = realm.objects(Word.self).filter("speech = '形容詞'").map{$0}
-        originalArray = realm.objects(Word.self).filter("speech = 'オリジナル'").map{$0}
+        nounArray = realm.objects(Word.self).filter("speech = 1").map{$0}
+        verbArray = realm.objects(Word.self).filter("speech = 2").map{$0}
+        adjectiveArray = realm.objects(Word.self).filter("speech = 3").map{$0}
+        originalArray = realm.objects(Word.self).filter("speech = 4").map{$0}
     }
     
     func setAd() {
-        bannerView.adUnitID = "ca-app-pub-7727323242900759/9765737025"
         bannerView.load(GADRequest())
     }
     
@@ -65,7 +64,7 @@ class DataViewController: UIViewController {
         }
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAtIndexPath indexPath: IndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         
         switch segmentedControl.selectedSegmentIndex {
@@ -82,7 +81,7 @@ class DataViewController: UIViewController {
         return cell
     }
     
-    func tableView(_ tableView: UITableView!, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: IndexPath!) {
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if (editingStyle == UITableViewCellEditingStyle.delete){
             removeWord(indexPath)
         }

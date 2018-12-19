@@ -48,36 +48,36 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func registerDefaultWord() {
-        let nounArray = [createInitialWord("名詞", text: "海"),
-                         createInitialWord("名詞", text: "ことわざ"),
-                         createInitialWord("名詞", text: "エンターテイナー"),
-                         createInitialWord("名詞", text: "出口"),
-                         createInitialWord("名詞", text: "神様"),
-                         createInitialWord("名詞", text: "ガム"),
-                         createInitialWord("名詞", text: "ジョウロ"),
-                         createInitialWord("名詞", text: "巻物"),
-                         createInitialWord("名詞", text: "カレンダー"),
-                         createInitialWord("名詞", text: "ふでばこ")]
-        let verbArray = [createInitialWord("動詞", text: "動く"),
-                         createInitialWord("動詞", text: "固まる"),
-                         createInitialWord("動詞", text: "口ずさむ"),
-                         createInitialWord("動詞", text: "倒れる"),
-                         createInitialWord("動詞", text: "組み立てる"),
-                         createInitialWord("動詞", text: "守る"),
-                         createInitialWord("動詞", text: "落ちる"),
-                         createInitialWord("動詞", text: "直す"),
-                         createInitialWord("動詞", text: "思い出す"),
-                         createInitialWord("動詞", text: "謝る")]
-        let adjectiveArray = [createInitialWord("形容詞", text: "赤い"),
-                              createInitialWord("形容詞", text: "長い"),
-                              createInitialWord("形容詞", text: "優しい"),
-                              createInitialWord("形容詞", text: "ささやかな"),
-                              createInitialWord("形容詞", text: "斬新な"),
-                              createInitialWord("形容詞", text: "おぞましい"),
-                              createInitialWord("形容詞", text: "なれなれしい"),
-                              createInitialWord("形容詞", text: "かわいい"),
-                              createInitialWord("形容詞", text: "頼もしい"),
-                              createInitialWord("形容詞", text: "好奇心旺盛な")]
+        let nounArray = [createInitialWord(1, text: "海"),
+                         createInitialWord(1, text: "ことわざ"),
+                         createInitialWord(1, text: "エンターテイナー"),
+                         createInitialWord(1, text: "出口"),
+                         createInitialWord(1, text: "神様"),
+                         createInitialWord(1, text: "ガム"),
+                         createInitialWord(1, text: "ジョウロ"),
+                         createInitialWord(1, text: "巻物"),
+                         createInitialWord(1, text: "カレンダー"),
+                         createInitialWord(1, text: "ふでばこ")]
+        let verbArray = [createInitialWord(2, text: "動く"),
+                         createInitialWord(2, text: "固まる"),
+                         createInitialWord(2, text: "口ずさむ"),
+                         createInitialWord(2, text: "倒れる"),
+                         createInitialWord(2, text: "組み立てる"),
+                         createInitialWord(2, text: "守る"),
+                         createInitialWord(2, text: "落ちる"),
+                         createInitialWord(2, text: "直す"),
+                         createInitialWord(2, text: "思い出す"),
+                         createInitialWord(2, text: "謝る")]
+        let adjectiveArray = [createInitialWord(3, text: "赤い"),
+                              createInitialWord(3, text: "長い"),
+                              createInitialWord(3, text: "優しい"),
+                              createInitialWord(3, text: "ささやかな"),
+                              createInitialWord(3, text: "斬新な"),
+                              createInitialWord(3, text: "おぞましい"),
+                              createInitialWord(3, text: "なれなれしい"),
+                              createInitialWord(3, text: "かわいい"),
+                              createInitialWord(3, text: "頼もしい"),
+                              createInitialWord(3, text: "好奇心旺盛な")]
         
         let realm = try! Realm()
         try! realm.write {
@@ -93,9 +93,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
     }
     
-    func createInitialWord(_ speech: String!, text: String!) -> Word {
+    func createInitialWord(_ type: Int, text: String) -> Word {
         let word = Word()
-        word.word = speech
+        word.type = type
         word.word = text
         
         return word

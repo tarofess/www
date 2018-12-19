@@ -9,7 +9,7 @@
 import UIKit
 import GoogleMobileAds
 
-class CreateWordViewController: UIViewController {
+class CreateWordViewController: UIViewController, GADBannerViewDelegate {
     
     @IBOutlet weak var adjective: UISwitch!
     @IBOutlet weak var noun: UISwitch!
@@ -27,7 +27,6 @@ class CreateWordViewController: UIViewController {
     }
     
     func setAd() {
-        bannerView.adUnitID = "ca-app-pub-7727323242900759/9765737025"
         bannerView.load(GADRequest())
     }
     

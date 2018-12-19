@@ -10,7 +10,7 @@ import UIKit
 import RealmSwift
 import GoogleMobileAds
 
-class ResultViewController: UIViewController {
+class ResultViewController: UIViewController, GADBannerViewDelegate {
     
     @IBOutlet weak var originalWordLabel: UILabel!
     @IBOutlet weak var bannerView: GADBannerView!
@@ -29,7 +29,6 @@ class ResultViewController: UIViewController {
     }
     
     func setAd() {
-        bannerView.adUnitID = "ca-app-pub-7727323242900759/9765737025"
         bannerView.load(GADRequest())
     }
     
