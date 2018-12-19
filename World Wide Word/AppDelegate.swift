@@ -95,8 +95,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func createInitialWord(_ speech: String!, text: String!) -> Word {
         let word = Word()
-        word.speech = speech
-        word.text = text
+        word.word = speech
+        word.word = text
         
         return word
     }

@@ -10,14 +10,14 @@ import UIKit
 import RealmSwift
 import GoogleMobileAds
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     
     @IBOutlet weak var speechPicker: UIPickerView!
     @IBOutlet weak var textField: UITextField!
     @IBOutlet weak var bannerView: GADBannerView!
     
-    let speechArray = ["名詞", "動詞", "形容詞"]
-    var speech = "名詞"
+    let speechs = ["名詞", "動詞", "形容詞"]
+    var selectedSpeech = 1
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,20 +37,20 @@ class ViewController: UIViewController {
 
     // MARK:- picker
 
-    func numberOfComponentsInPickerView(_ pickerview1: UIPickerView) -> Int {
+    func numberOfComponents(in pickerview1: UIPickerView) -> Int {
         return 1
     }
     
     func pickerView(_ pickerview1: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return speechArray.count
+        return speechs.count
     }
     
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String! {
-        return speechArray[row]
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return speechs[row]
     }
     
     func pickerView(_ pickerview1: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        speech = speechArray[row]
+        selectedSpeech = row + 1
     }
     
     // MARK:- textField
@@ -69,8 +69,8 @@ class ViewController: UIViewController {
         } else {
             if (!checkSameDataExists()) {
                 let word = Word()
-                word.speech = speech
-                word.text = textField.text!
+                word.type = selectedSpeech
+                word.word = textField.text!
                 
                 let realm = try! Realm()
                 try! realm.write {
@@ -97,7 +97,7 @@ class ViewController: UIViewController {
     
     func checkSameDataExists() -> Bool {
         let realm = try! Realm()
-        let predicate = NSPredicate(format: "speech = %@ AND text = %@", speech, textField.text!)
+        let predicate = NSPredicate(format: "speech = %@ AND text = %@", selectedSpeech, textField.text!)
         let words = realm.objects(Word.self).filter(predicate)
         
         if words.isEmpty {
@@ -108,9 +108,9 @@ class ViewController: UIViewController {
     }
     
     func appendWordToArray(_ word: Word) {
-        if word.speech == "名詞" {
+        if word.type == 1 {
             WordManager.sharedManager.nounArray.append(word)
-        } else if word.speech == "動詞" {
+        } else if word.type == 2 {
             WordManager.sharedManager.verbArray.append(word)
         } else {
             WordManager.sharedManager.adjectiveArray.append(word)

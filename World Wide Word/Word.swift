@@ -12,8 +12,8 @@ import RealmSwift
 class Word: Object, Codable {
     
     @objc dynamic var id = UUID().uuidString
-    @objc dynamic var speech = ""
-    @objc dynamic var text = ""
+    @objc dynamic var type = 0  // 1:名詞　2:動詞　3:形容詞　4:オリジナル
+    @objc dynamic var word = ""
     
     override class func primaryKey() -> String {
         return "id"

@@ -150,26 +150,26 @@ class ShopViewController: UIViewController {
     func makePostWord(_ speech: String) -> Array<String> {
         var wordArray: [String] = []
         
-        let realm = try! Realm()
-        let words = realm.objects(Word.self).filter("speech = %@", speech).map{$0}
-        
-        for word in words {
-            wordArray.append(word.text)
-        }
+//        let realm = try! Realm()
+//        let words = realm.objects(Word.self).filter("speech = %@", speech).map{$0}
+//
+//        for word in words {
+//            wordArray.append(word.word)
+//        }
         
         return wordArray
     }
     
     func saveWords(jsonResult: [[String: String]]) {
-        let realm = try! Realm()
-        try! realm.write {
-            for (key, value) in jsonResult.flatMap({$0}) {
-                let word = Word()
-                word.speech = key
-                word.text = value
-                realm.add(word)
-            }
-        }
+//        let realm = try! Realm()
+//        try! realm.write {
+//            for (key, value) in jsonResult.flatMap({$0}) {
+//                let word = Word()
+//                word.type = key
+//                word.word = value
+//                realm.add(word)
+//            }
+//        }
     }
     
 }

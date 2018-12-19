@@ -16,7 +16,10 @@ class DataViewController: UIViewController {
     @IBOutlet weak var segmentedControl: UISegmentedControl!
     @IBOutlet weak var bannerView: GADBannerView!
     
-    var nounArray: Results<String>!
+    var nounArray = [Word]()
+    var verbArray = [Word]()
+    var adjectiveArray = [Word]()
+    var originalArray = [Word]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -67,13 +70,13 @@ class DataViewController: UIViewController {
         
         switch segmentedControl.selectedSegmentIndex {
             case 0:
-                cell.textLabel?.text = WordManager.sharedManager.nounArray[(indexPath as NSIndexPath).row].text
+                cell.textLabel?.text = WordManager.sharedManager.nounArray[(indexPath as NSIndexPath).row].word
             case 1:
-                cell.textLabel?.text = WordManager.sharedManager.verbArray[(indexPath as NSIndexPath).row].text
+                cell.textLabel?.text = WordManager.sharedManager.verbArray[(indexPath as NSIndexPath).row].word
             case 2:
-                cell.textLabel?.text = WordManager.sharedManager.adjectiveArray[(indexPath as NSIndexPath).row].text
+                cell.textLabel?.text = WordManager.sharedManager.adjectiveArray[(indexPath as NSIndexPath).row].word
             default:
-                cell.textLabel?.text = WordManager.sharedManager.originalArray[(indexPath as NSIndexPath).row].text
+                cell.textLabel?.text = WordManager.sharedManager.originalArray[(indexPath as NSIndexPath).row].word
             }
 
         return cell

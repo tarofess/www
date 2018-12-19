@@ -21,10 +21,10 @@ class WordManager: NSObject {
     
     func getWordFromDB() {
         let realm = try! Realm()
-        nounArray = realm.objects(Word.self).filter("speech = '名詞'").map{$0}
-        verbArray = realm.objects(Word.self).filter("speech = '動詞'").map{$0}
-        adjectiveArray = realm.objects(Word.self).filter("speech = '形容詞'").map{$0}
-        originalArray = realm.objects(Word.self).filter("speech = 'オリジナル'").map{$0}
+        nounArray = realm.objects(Word.self).filter("type = 1").map{$0}
+        verbArray = realm.objects(Word.self).filter("type = 2").map{$0}
+        adjectiveArray = realm.objects(Word.self).filter("type = 3").map{$0}
+        originalArray = realm.objects(Word.self).filter("type = 4").map{$0}
     }
 
 }

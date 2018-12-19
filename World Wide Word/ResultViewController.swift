@@ -35,8 +35,8 @@ class ResultViewController: UIViewController {
     
     @IBAction func saveWord(_ sender: AnyObject) {
         let word = Word()
-        word.speech = "オリジナル"
-        word.text = originalWord
+        word.type = 4
+        word.word = originalWord
         
         let realm = try! Realm()
         try! realm.write {
