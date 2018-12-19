@@ -31,9 +31,9 @@ class CreateWordViewController: UIViewController, GADBannerViewDelegate {
     }
     
     private func createOriginalWord() -> String! {
-        let adjectiveText: String = adjective.isOn ? WordManager.sharedManager.adjectiveArray[Int(arc4random_uniform(UInt32(WordManager.sharedManager.adjectiveArray.count - 1)))].word : ""
-        let nounText: String = noun.isOn ? WordManager.sharedManager.nounArray[Int(arc4random_uniform(UInt32(WordManager.sharedManager.nounArray.count - 1)))].word : ""
-        let verbText: String = verb.isOn ? WordManager.sharedManager.verbArray[Int(arc4random_uniform(UInt32(WordManager.sharedManager.verbArray.count - 1)))].word : ""
+        let adjectiveText: String = adjective.isOn ? WordManager.sharedManager.adjectiveArray[Int.random(in: 0 ..< WordManager.sharedManager.adjectiveArray.count)].word : ""
+        let nounText: String = noun.isOn ? WordManager.sharedManager.nounArray[Int.random(in: 0 ..< WordManager.sharedManager.nounArray.count)].word : ""
+        let verbText: String = verb.isOn ? WordManager.sharedManager.verbArray[Int.random(in: 0 ..< WordManager.sharedManager.verbArray.count)].word : ""
         
         return adjectiveText + nounText + verbText
     }
@@ -42,10 +42,11 @@ class CreateWordViewController: UIViewController, GADBannerViewDelegate {
         let resultViewController: ResultViewController = segue.destination as! ResultViewController
         
         if !adjective.isOn && noun.isOn && !verb.isOn {
-            let nounArray = WordManager.sharedManager.nounArray
-            let noun1 = nounArray[Int(arc4random_uniform(UInt32(nounArray.count - 1)))]
-            let noun2 = nounArray[Int(arc4random_uniform(UInt32(nounArray.count - 1)))]
-            resultViewController.originalWord = noun1.word + noun2.word
+            if let nounArray = WordManager.sharedManager.nounArray {
+                let noun1 = nounArray[Int.random(in: 0 ..< nounArray.count)]
+                let noun2 = nounArray[Int.random(in: 0 ..< nounArray.count)]
+                resultViewController.originalWord = noun1.word + noun2.word
+            }
         } else {
             resultViewController.originalWord = createOriginalWord()
         }

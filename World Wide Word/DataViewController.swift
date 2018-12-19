@@ -86,19 +86,15 @@ class DataViewController: UIViewController, UITableViewDelegate, UITableViewData
             switch self.segmentedControl.selectedSegmentIndex {
             case 0:
                 word = WordManager.sharedManager.nounArray[indexPath.row]
-                WordManager.sharedManager.nounArray.remove(at: indexPath.row)
                 
             case 1:
                 word = WordManager.sharedManager.verbArray[indexPath.row]
-                WordManager.sharedManager.verbArray.remove(at: indexPath.row)
                 
             case 2:
                 word = WordManager.sharedManager.adjectiveArray[indexPath.row]
-                WordManager.sharedManager.adjectiveArray.remove(at: indexPath.row)
                 
             default:
                 word = WordManager.sharedManager.originalArray[indexPath.row]
-                WordManager.sharedManager.originalArray.remove(at: indexPath.row)
             }
             
             WordManager.sharedManager.removeWordFromDB(word: word)

@@ -12,10 +12,10 @@ import RealmSwift
 class WordManager: NSObject {
     
     static let sharedManager = WordManager()
-    var nounArray = [Word]()
-    var verbArray = [Word]()
-    var adjectiveArray = [Word]()
-    var originalArray = [Word]()
+    var nounArray: Results<Word>!
+    var verbArray: Results<Word>!
+    var adjectiveArray: Results<Word>!
+    var originalArray: Results<Word>!
     
     private override init() {
         super.init()
@@ -26,9 +26,9 @@ class WordManager: NSObject {
         originalArray = getWordByType(type: 4)
     }
     
-    func getWordByType(type: Int) -> [Word] {
+    func getWordByType(type: Int) -> Results<Word> {
         let realm = try! Realm()
-        return realm.objects(Word.self).filter("type = \(type)").map{$0}
+        return realm.objects(Word.self).filter("type = \(type)")
     }
 
     func addWordToDB(type: Int, word: String) {

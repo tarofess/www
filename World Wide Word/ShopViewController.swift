@@ -152,7 +152,7 @@ class ShopViewController: UIViewController {
     private func getMyWords(_ type: Int) -> Array<String> {
         let myWords = WordManager.sharedManager.getWordByType(type: type)
         let wordStringArray = myWords.map({$0.word})
-        return wordStringArray
+        return Array(wordStringArray)
     }
     
     private func saveWords(jsonResult: [[Int: String]]) {
