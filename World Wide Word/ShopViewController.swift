@@ -128,7 +128,7 @@ class ShopViewController: UIViewController {
             DispatchQueue.main.async {
                 if error == nil {
                     do {
-                        if let jsonResult = try JSONSerialization.jsonObject(with: data!, options: .allowFragments) as? [[Int: String]] {
+                        if let jsonResult = try JSONSerialization.jsonObject(with: data!, options: .allowFragments) as? [[String: Any]] {
                             self.saveWords(jsonResult: jsonResult)
                             self.showCompletionAlert("ゲットだぜ！", message: "\(self.getSelectedSpeech().speech)パックをゲットだぜしました")
                         } else {
@@ -152,9 +152,16 @@ class ShopViewController: UIViewController {
         return Array(wordStringArray)
     }
     
-    private func saveWords(jsonResult: [[Int: String]]) {
-        for (key, value) in jsonResult.flatMap({$0}) {
-            WordManager.sharedManager.addWordToDB(type: key, word: value)
+    private func saveWords(jsonResult: [[String: Any]]) {
+        for wordPack in jsonResult {
+            var type = 0
+            var word = ""
+            
+            for (key, value) in wordPack {
+                if key == "type" { type = value as! Int }
+                if key == "word" { word = value as! String }
+            }
+            WordManager.sharedManager.addWordToDB(type: type, word: word)
         }
     }
     
