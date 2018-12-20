@@ -99,6 +99,8 @@ class ShopViewController: UIViewController {
     }
     
     private func showCompletionAlert(_ title: String, message: String) {
+        self.indicator.stopAnimating()
+        
         let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
         let okAction = UIAlertAction(title: "はい", style: .default, handler: nil)
         alertController.addAction(okAction)
@@ -126,21 +128,28 @@ class ShopViewController: UIViewController {
         
         let task = URLSession.shared.dataTask(with: request) { (data, response, error) -> Void in
             DispatchQueue.main.async {
-                if error == nil {
-                    do {
-                        if let jsonResult = try JSONSerialization.jsonObject(with: data!, options: .allowFragments) as? [[String: Any]] {
-                            self.saveWords(jsonResult: jsonResult)
-                            self.showCompletionAlert("ゲットだぜ！", message: "\(self.getSelectedSpeech().speech)パックをゲットだぜしました")
-                        } else {
-                            self.showCompletionAlert("エラー", message: "\(self.getSelectedSpeech().speech)パックをゲットだぜできませんでした")
-                        }
-                    } catch {
+                if error != nil {
+                    self.showCompletionAlert("エラー", message: error!.localizedDescription)
+                    return
+                }
+                
+                do {
+                    guard let jsonResult = try JSONSerialization.jsonObject(with: data!, options: .allowFragments) as? [[String: Any]] else {
                         self.showCompletionAlert("エラー", message: "\(self.getSelectedSpeech().speech)パックをゲットだぜできませんでした")
+                        return
                     }
-                } else {
+                    
+                    if jsonResult.count == 0 {
+                        self.showCompletionAlert("エラー", message: "\(self.getSelectedSpeech().speech)パックが現在品切れでゲットだぜできませんでした")
+                        return
+                    }
+                    
+                    self.saveWords(jsonResult: jsonResult)
+                    self.showCompletionAlert("ゲットだぜ！", message: "\(self.getSelectedSpeech().speech)パックをゲットだぜしました")
+
+                } catch {
                     self.showCompletionAlert("エラー", message: "\(self.getSelectedSpeech().speech)パックをゲットだぜできませんでした")
                 }
-                self.indicator.stopAnimating()
             }
         }
         task.resume()
