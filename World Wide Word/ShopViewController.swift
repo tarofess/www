@@ -84,18 +84,18 @@ class ShopViewController: UIViewController {
         self.present(alertController, animated: true, completion: nil)
     }
     
-    private func getSelectedSpeech() -> Int {
-        var type = 0
+    private func getSelectedSpeech() -> (type: Int, speech: String) {
+        var selectedSpeech: (Int, String)
         
         if nounSwitch.isOn {
-            type = 1
+            selectedSpeech = (1, "名詞")
         } else if verbSwitch.isOn {
-            type = 2
+            selectedSpeech = (2, "動詞")
         } else {
-            type = 3
+            selectedSpeech = (3, "形容詞")
         }
 
-        return type
+        return selectedSpeech
     }
     
     private func showCompletionAlert(_ title: String, message: String) {
@@ -104,22 +104,22 @@ class ShopViewController: UIViewController {
         alertController.addAction(okAction)
         
         self.present(alertController, animated: true, completion: nil)
-        self.indicator.stopAnimating()
         UIApplication.shared.endIgnoringInteractionEvents()
     }
     
     private func getWordFromServer() {
+        self.indicator.startAnimating()
         UIApplication.shared.beginIgnoringInteractionEvents()
         
-        let url = URL(string: "http://taro.php.xdomain.jp/word2.php")!
+        let url = URL(string: "http://taro.php.xdomain.jp/getWords.php")!
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
         request.timeoutInterval = 10.0
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         
         let param = [
-                "type": self.getSelectedSpeech(),
-                "myWords": self.getMyWords(self.getSelectedSpeech())
+                "type": self.getSelectedSpeech().type,
+                "myWords": self.getMyWords(self.getSelectedSpeech().type)
             ] as [String : Any]
         
         request.httpBody = try? JSONSerialization.data(withJSONObject: param, options: [])
@@ -130,23 +130,20 @@ class ShopViewController: UIViewController {
                     do {
                         if let jsonResult = try JSONSerialization.jsonObject(with: data!, options: .allowFragments) as? [[Int: String]] {
                             self.saveWords(jsonResult: jsonResult)
-                            self.showCompletionAlert("ゲットだぜ！", message: "\(self.getSelectedSpeech())パックをゲットだぜしました")
+                            self.showCompletionAlert("ゲットだぜ！", message: "\(self.getSelectedSpeech().speech)パックをゲットだぜしました")
                         } else {
-                            self.showCompletionAlert("エラー", message: "現在ゲットだぜできる分の\(self.getSelectedSpeech())パックがありません")
+                            self.showCompletionAlert("エラー", message: "\(self.getSelectedSpeech().speech)パックをゲットだぜできませんでした")
                         }
                     } catch {
-                        self.showCompletionAlert("エラー", message: "なぜかは分かりませんが\(self.getSelectedSpeech())パックをゲットだぜできませんでした")
+                        self.showCompletionAlert("エラー", message: "\(self.getSelectedSpeech().speech)パックをゲットだぜできませんでした")
                     }
-                    self.indicator.stopAnimating()
-                    
                 } else {
-                    self.showCompletionAlert("エラー", message: "なぜかは分かりませんが\(self.getSelectedSpeech())パックをゲットだぜできませんでした")
+                    self.showCompletionAlert("エラー", message: "\(self.getSelectedSpeech().speech)パックをゲットだぜできませんでした")
                 }
+                self.indicator.stopAnimating()
             }
         }
         task.resume()
-        
-        self.indicator.startAnimating()
     }
     
     private func getMyWords(_ type: Int) -> Array<String> {
