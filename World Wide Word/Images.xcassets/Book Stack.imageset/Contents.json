@@ -2,11 +2,11 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "Book Stack.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
+      "filename" : "Book Stack.png",
       "scale" : "2x"
     },
     {

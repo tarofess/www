@@ -30,6 +30,12 @@ class CreateWordViewController: UIViewController, GADBannerViewDelegate {
         bannerView.load(GADRequest())
     }
     
+    @IBAction func tappedCreateButton(_ sender: Any) {
+        if (!(!adjective.isOn && !noun.isOn && !verb.isOn)) {
+            self.performSegue(withIdentifier: "RunResultViewController", sender: self)
+        }
+    }
+    
     private func createOriginalWord() -> String! {
         let adjectiveText: String = adjective.isOn ? WordManager.sharedManager.adjectiveArray[Int.random(in: 0 ..< WordManager.sharedManager.adjectiveArray.count)].word : ""
         let nounText: String = noun.isOn ? WordManager.sharedManager.nounArray[Int.random(in: 0 ..< WordManager.sharedManager.nounArray.count)].word : ""

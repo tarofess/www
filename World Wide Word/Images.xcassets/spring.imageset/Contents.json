@@ -2,11 +2,11 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "spring.jpg",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
+      "filename" : "spring.jpg",
       "scale" : "2x"
     },
     {
