@@ -44,7 +44,6 @@ class ResultViewController: UIViewController, GADBannerViewDelegate {
         } else {
             UIUtils.showSimpleAlert("エラー", message: "同じ言葉が既に登録されています", view: self)
         }
-        
     }
     
     @IBAction func back(_ sender: AnyObject) {

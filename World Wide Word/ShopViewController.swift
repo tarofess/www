@@ -145,7 +145,7 @@ class ShopViewController: UIViewController {
                     }
                     
                     self.saveWords(jsonResult: jsonResult)
-                    self.showCompletionAlert("ゲットだぜ！", message: "\(self.getSelectedSpeech().speech)パックをゲットだぜしました")
+                    self.showCompletionAlert("ゲットだぜ！", message: "新しい\(self.getSelectedSpeech().speech)をゲットだぜしました")
 
                 } catch {
                     self.showCompletionAlert("エラー", message: "\(self.getSelectedSpeech().speech)パックをゲットだぜできませんでした")
