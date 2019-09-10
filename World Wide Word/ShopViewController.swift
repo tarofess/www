@@ -8,7 +8,6 @@
 
 import UIKit
 import RealmSwift
-import GoogleMobileAds
 
 class ShopViewController: UIViewController {
     
@@ -16,7 +15,6 @@ class ShopViewController: UIViewController {
     @IBOutlet weak var verbSwitch: UISwitch!
     @IBOutlet weak var adjectiveSwitch: UISwitch!
     @IBOutlet weak var purchaseButton: UIButton!
-    @IBOutlet weak var bannerView: GADBannerView!
     
     private var productPrice: String!
     private var indicator: UIActivityIndicatorView!
@@ -24,7 +22,6 @@ class ShopViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setAd()
         setActivityIndicator()
         setSwitchAction()
     }
@@ -33,23 +30,19 @@ class ShopViewController: UIViewController {
         super.didReceiveMemoryWarning()
     }
     
-    private func setAd() {
-        bannerView.load(GADRequest())
-    }
-    
     private func setActivityIndicator() {
         indicator = UIActivityIndicatorView()
         indicator.frame = CGRect(x: 0, y: 0, width: 100, height: 100)
         indicator.center = self.view.center
         indicator.hidesWhenStopped = true
-        indicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.gray
+        indicator.style = UIActivityIndicatorView.Style.gray
         self.view.addSubview(indicator)
     }
     
     private func setSwitchAction() {
-        nounSwitch.addTarget(self, action: #selector(ShopViewController.changeNoun), for: UIControlEvents.valueChanged)
-        verbSwitch.addTarget(self, action: #selector(ShopViewController.changeVerb), for: UIControlEvents.valueChanged)
-        adjectiveSwitch.addTarget(self, action: #selector(ShopViewController.changeAdje), for: UIControlEvents.valueChanged)
+        nounSwitch.addTarget(self, action: #selector(ShopViewController.changeNoun), for: UIControl.Event.valueChanged)
+        verbSwitch.addTarget(self, action: #selector(ShopViewController.changeVerb), for: UIControl.Event.valueChanged)
+        adjectiveSwitch.addTarget(self, action: #selector(ShopViewController.changeAdje), for: UIControl.Event.valueChanged)
     }
     
     @objc func changeNoun() {

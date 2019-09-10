@@ -7,27 +7,19 @@
 //
 
 import UIKit
-import GoogleMobileAds
 
-class CreateWordViewController: UIViewController, GADBannerViewDelegate {
+class CreateWordViewController: UIViewController {
     
     @IBOutlet weak var adjective: UISwitch!
     @IBOutlet weak var noun: UISwitch!
     @IBOutlet weak var verb: UISwitch!
-    @IBOutlet weak var bannerView: GADBannerView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        setAd()
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-    }
-    
-    private func setAd() {
-        bannerView.load(GADRequest())
     }
     
     @IBAction func tappedCreateButton(_ sender: Any) {

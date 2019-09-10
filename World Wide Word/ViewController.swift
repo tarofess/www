@@ -8,31 +8,23 @@
 
 import UIKit
 import RealmSwift
-import GoogleMobileAds
 
-class ViewController: UIViewController, UITextFieldDelegate, UIPickerViewDelegate, UIPickerViewDataSource, GADBannerViewDelegate {
+class ViewController: UIViewController, UITextFieldDelegate, UIPickerViewDelegate, UIPickerViewDataSource {
     
     @IBOutlet weak var speechPicker: UIPickerView!
     @IBOutlet weak var textField: UITextField!
-    @IBOutlet weak var bannerView: GADBannerView!
     
     private let speechs = ["名詞", "動詞", "形容詞"]
     private var selectedSpeech = 1
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        setAd()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
     
-    private func setAd() {
-        bannerView.load(GADRequest())
-    }
-
     // MARK:- picker
 
     func numberOfComponents(in pickerview1: UIPickerView) -> Int {
@@ -64,14 +56,15 @@ class ViewController: UIViewController, UITextFieldDelegate, UIPickerViewDelegat
     @IBAction func registerWord(_ sender: AnyObject) {
         if textField.text == "" {
             UIUtils.showSimpleAlert("エラー", message: "文字を入力してください", view: self)
+            return
+        }
+        
+        if (WordManager.sharedManager.isExistsSameData(type: selectedSpeech, word: textField.text!)) {
+            UIUtils.showSimpleAlert("エラー", message: "同じ言葉が既に登録されています", view: self)
         } else {
-            if (!WordManager.sharedManager.isExistsSameData(type: selectedSpeech, word: textField.text!)) {
-                WordManager.sharedManager.addWordToDB(type: selectedSpeech, word: textField.text!)
-                UIUtils.showSimpleAlert("登録しました", message: "", view: self)
-                textField.text = ""
-            } else {
-                UIUtils.showSimpleAlert("エラー", message: "同じ言葉が既に登録されています", view: self)
-            }
+            WordManager.sharedManager.addWordToDB(type: selectedSpeech, word: textField.text!)
+            UIUtils.showSimpleAlert("登録しました", message: "", view: self)
+            textField.text = ""
         }
     }
     
