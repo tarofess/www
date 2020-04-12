@@ -35,7 +35,7 @@ class ShopViewController: UIViewController {
         indicator.frame = CGRect(x: 0, y: 0, width: 100, height: 100)
         indicator.center = self.view.center
         indicator.hidesWhenStopped = true
-        indicator.style = UIActivityIndicatorView.Style.gray
+        indicator.style = UIActivityIndicatorView.Style.medium
         self.view.addSubview(indicator)
     }
     
@@ -99,12 +99,20 @@ class ShopViewController: UIViewController {
         alertController.addAction(okAction)
         
         self.present(alertController, animated: true, completion: nil)
-        UIApplication.shared.endIgnoringInteractionEvents()
+        
+        nounSwitch.isUserInteractionEnabled = true
+        verbSwitch.isUserInteractionEnabled = true
+        adjectiveSwitch.isUserInteractionEnabled = true
+        purchaseButton.isUserInteractionEnabled = true
     }
     
     private func getWordFromServer() {
         self.indicator.startAnimating()
-        UIApplication.shared.beginIgnoringInteractionEvents()
+
+        nounSwitch.isUserInteractionEnabled = false
+        verbSwitch.isUserInteractionEnabled = false
+        adjectiveSwitch.isUserInteractionEnabled = false
+        purchaseButton.isUserInteractionEnabled = false
         
         let url = URL(string: "http://taro.php.xdomain.jp/getWords.php")!
         var request = URLRequest(url: url)

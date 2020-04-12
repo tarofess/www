@@ -3,12 +3,12 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		501E21A51F76AB300055476F /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 501E21A31F76AB300055476F /* Realm.framework */; };
-		501E21A61F76AB300055476F /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 501E21A41F76AB300055476F /* RealmSwift.framework */; };
+		501936BE24430B54005F0C98 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 501936BD24430B54005F0C98 /* Realm */; };
+		501936C024430B54005F0C98 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 501936BF24430B54005F0C98 /* RealmSwift */; };
 		505CE8E91D850B7400A45343 /* WordManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 505CE8E81D850B7400A45343 /* WordManager.swift */; };
 		5080512F1AAD14A0004F1E58 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5080512E1AAD14A0004F1E58 /* AppDelegate.swift */; };
 		508051311AAD14A0004F1E58 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 508051301AAD14A0004F1E58 /* ViewController.swift */; };
@@ -86,16 +86,16 @@
 				EAD0EB611FA1798100554F52 /* SystemConfiguration.framework in Frameworks */,
 				EAD0EB5F1FA1797600554F52 /* StoreKit.framework in Frameworks */,
 				EAD0EB5E1FA1797000554F52 /* MessageUI.framework in Frameworks */,
+				501936C024430B54005F0C98 /* RealmSwift in Frameworks */,
 				EAD0EB5C1FA1796700554F52 /* EventKitUI.framework in Frameworks */,
 				EAD0EB5A1FA1795C00554F52 /* EventKit.framework in Frameworks */,
 				EAD0EB581FA1793300554F52 /* CoreTelephony.framework in Frameworks */,
+				501936BE24430B54005F0C98 /* Realm in Frameworks */,
 				EAD0EB561FA1792900554F52 /* CoreMedia.framework in Frameworks */,
 				EAD0EB541FA1792000554F52 /* CoreGraphics.framework in Frameworks */,
 				EAD0EB521FA1791600554F52 /* AVFoundation.framework in Frameworks */,
 				EAD0EB501FA178DA00554F52 /* AudioToolbox.framework in Frameworks */,
 				EAD0EB4E1FA178D000554F52 /* AdSupport.framework in Frameworks */,
-				501E21A51F76AB300055476F /* Realm.framework in Frameworks */,
-				501E21A61F76AB300055476F /* RealmSwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -226,6 +226,10 @@
 			dependencies = (
 			);
 			name = "World Wide Word";
+			packageProductDependencies = (
+				501936BD24430B54005F0C98 /* Realm */,
+				501936BF24430B54005F0C98 /* RealmSwift */,
+			);
 			productName = "World Wide Word";
 			productReference = 508051291AAD14A0004F1E58 /* World Wide Word.app */;
 			productType = "com.apple.product-type.application";
@@ -281,6 +285,9 @@
 				Base,
 			);
 			mainGroup = 508051201AAD14A0004F1E58;
+			packageReferences = (
+				501936BC24430B54005F0C98 /* XCRemoteSwiftPackageReference "realm-cocoa" */,
+			);
 			productRefGroup = 5080512A1AAD14A0004F1E58 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -318,15 +325,14 @@
 			files = (
 			);
 			inputPaths = (
-				"$(SRCROOT)/Carthage/Build/iOS/Realm.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/RealmSwift.framework",
 			);
 			name = "Run Script";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
+			shellScript = "
+";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -485,7 +491,8 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -497,26 +504,28 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 3.2;
+				CURRENT_PROJECT_VERSION = 3.3;
 				DEVELOPMENT_TEAM = 8642FHK38M;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Build/Products/Release-iphoneos/RealmSwift",
 					"$(PROJECT_DIR)/Build/Products/Release-iphoneos/Realm",
 					"$(PROJECT_DIR)/Build/Products/Debug-iphoneos/SwiftyJSON",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
 					"$(PROJECT_DIR)/World\\ Wide\\ Word",
 					"$(PROJECT_DIR)/World\\ Wide\\ Word",
 				);
 				GCC_OPTIMIZATION_LEVEL = 0;
 				INFOPLIST_FILE = "World Wide Word/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Pods/build/Debug-iphoneos",
 				);
-				MARKETING_VERSION = 1.5;
+				MARKETING_VERSION = 1.6;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.taro.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "";
@@ -534,26 +543,28 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer: matsusaki taro (SH2X77WM4Q)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 3.2;
+				CURRENT_PROJECT_VERSION = 3.3;
 				DEVELOPMENT_TEAM = 8642FHK38M;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Build/Products/Release-iphoneos/RealmSwift",
 					"$(PROJECT_DIR)/Build/Products/Release-iphoneos/Realm",
 					"$(PROJECT_DIR)/Build/Products/Debug-iphoneos/SwiftyJSON",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
 					"$(PROJECT_DIR)/World\\ Wide\\ Word",
 					"$(PROJECT_DIR)/World\\ Wide\\ Word",
 				);
 				GCC_OPTIMIZATION_LEVEL = 0;
 				INFOPLIST_FILE = "World Wide Word/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Pods/build/Debug-iphoneos",
 				);
-				MARKETING_VERSION = 1.5;
+				MARKETING_VERSION = 1.6;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.taro.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "";
@@ -576,7 +587,11 @@
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = "World Wide WordTests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.taro.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -593,7 +608,11 @@
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = "World Wide WordTests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.taro.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -632,6 +651,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		501936BC24430B54005F0C98 /* XCRemoteSwiftPackageReference "realm-cocoa" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/realm-cocoa";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.4.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		501936BD24430B54005F0C98 /* Realm */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 501936BC24430B54005F0C98 /* XCRemoteSwiftPackageReference "realm-cocoa" */;
+			productName = Realm;
+		};
+		501936BF24430B54005F0C98 /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 501936BC24430B54005F0C98 /* XCRemoteSwiftPackageReference "realm-cocoa" */;
+			productName = RealmSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 508051211AAD14A0004F1E58 /* Project object */;
 }
